@@ -29,5 +29,4 @@ jobs:
           # VALIDATE_PYTHON: true
           VALIDATE_PYTHON_FLAKE8: true
           # VALIDATE_PYTHON_PYLINT: false
-          /github/workspace/super-linter:
-            repor:
+
