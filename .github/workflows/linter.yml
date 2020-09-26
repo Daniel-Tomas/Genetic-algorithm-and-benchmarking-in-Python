@@ -4,7 +4,7 @@ name: Lint Code Base
 
 # Controls when the action will run.
 on: push
-    
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -26,6 +26,6 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_PYTHON: true
+          # VALIDATE_PYTHON: true
           VALIDATE_PYTHON_FLAKE8: true
           VALIDATE_PYTHON_PYLINT: false
