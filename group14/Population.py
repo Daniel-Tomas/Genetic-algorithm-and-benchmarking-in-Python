@@ -6,10 +6,15 @@ class Population:
         self.collection = collection
 
     def __repr__(self):
+        """
+        It casts ...
+        Returns:
+             str: The population in string format
+        """
         res = '[ '
         for elem in self.collection:
             res += f'[ {elem.array}, {elem.fitness} ], '
-        return res + ' ]'
+        return res
 
     def ascendent_sort(self):
         self.collection.sort(key=lambda x: x.fitness)
@@ -18,16 +23,28 @@ class Population:
         self.collection.sort(key=lambda x: x.fitness, reverse=True)
 
     def add(self, genome):
+        """
+        Args:
+            genome:
+        """
         self.collection.append(genome)
 
     def remove(self, genome):
-        """Excepcion en caso de que no esté el elemento a elminar"""
+        """Excepcion en caso de que no esté el elemento a elminar
+
+        Args:
+            genome:
+        """
         # for elem in self.collection:
         #     if elem == genome:
         self.collection.remove(genome)
 
     def replace(self, genome):
-        """Excepcion en caso de que no esté el elemento a elminar"""
+        """Excepcion en caso de que no esté el elemento a elminar
+
+        Args:
+            genome:
+        """
         # for elem in self.collection:
         #     if elem == genome:
         self.remove(genome)
