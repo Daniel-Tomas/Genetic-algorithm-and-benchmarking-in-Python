@@ -6,6 +6,7 @@
 1. En la carpeta prueba-doc-sphinx/src hay dos codigos de ejemplo de como se debe escribir la documentacion (el mas importante es pruebaa.py)
 2. En la carpeta prueba-doc-sphinx/html se encuentra la documentacion generada por ese codigo de ejemplo
 
+
 **PD**: Para cualquier duda generica de Python, mirar [documentacion oficial](https://docs.python.org/3/)
 
 
