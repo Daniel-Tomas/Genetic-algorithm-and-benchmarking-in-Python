@@ -1,3 +1,6 @@
+from numpy import random
+
+
 class Genome:
     """Basic class
 
@@ -8,9 +11,12 @@ class Genome:
             fitness (int): solution´s quality
     """
 
-    def __init__(self, array, fitness):
-        self.array = array
-        self.fitness = fitness
+    def __init__(self, minfun, bounds):
+        # self.array = []
+        # for i in range(0, len(bounds)):
+        #     self.array.append( random.uniform(bounds[i][0], bounds[i][1], 1)[0] )
+        self.array = list(random.uniform(bounds[0][0], bounds[0][1], len(bounds)))
+        self.fitness = minfun(self.array)
 
     def __eq__(self, other):
         """Compare if `other` contains the same values as `self`

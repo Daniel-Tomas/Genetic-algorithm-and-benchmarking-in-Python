@@ -10,8 +10,10 @@ class Population:
                 Genome (array): Genome class object
         """
 
-    def __init__(self, collection):
-        self.collection = collection
+    def __init__(self, minfun, bounds, psize):
+        self.collection = []
+        for _ in range(0, psize):
+            self.add(Genome(minfun, bounds))
 
     def __repr__(self):
         """
@@ -29,7 +31,6 @@ class Population:
         """It sort Genomes of 'self' by fitness in ascending order.
         """
         self.collection.sort(key=lambda x: x.fitness)
-
 
     def descendent_sort(self):
         """It sort Genomes of 'self' by fitness in descending order.
@@ -68,18 +69,24 @@ class Population:
         self.add(genomerp)
 
 
-genome1 = Genome([1, 33, 4], 3)
-genome2 = Genome([1, 33, 5], 4)
-genome3 = Genome([2, 33, 4], 1)
+# genome1 = Genome([1, 33, 4], 3)
+# genome2 = Genome([1, 33, 5], 4)
+# genome3 = Genome([2, 33, 4], 1)
+#
+# genome4 = Genome([2, 33, 4], -1)
+#
+# prueba = Population([genome1, genome2, genome3])
+# prueba.ascendent_sort()
+#
+# prueba.add(genome4)
+# print(prueba)
+#
+# prueba.remove(genome2)
+# print(prueba)
 
-genome4 = Genome([2, 33, 4], -1)
-
-prueba = Population([genome1, genome2, genome3])
-prueba.ascendent_sort()
-
-prueba.add(genome4)
-print(prueba)
-
-prueba.remove(genome2)
-print(prueba)
-
+# def f(sol):
+#     return sum(sol)
+#
+#
+# prueba = Population(f, [(0, 1), (0, 1)], 3)
+# print(prueba)
