@@ -13,7 +13,7 @@ class Population:
     def __init__(self, minfun, bounds, psize):
         self.collection = []
         for _ in range(0, psize):
-            self.add(Genome(minfun, bounds))
+            self.add(Genome(minfun=minfun, bounds=bounds))
 
     def __repr__(self):
         """
@@ -24,7 +24,7 @@ class Population:
         """
         res = '[ '
         for elem in self.collection:
-            res += f'[ {elem.array}, {elem.fitness} ], '
+            res += f'[ {elem.array}, fitness={elem.fitness} ], '
         return res
 
     def ascendent_sort(self):
@@ -67,7 +67,6 @@ class Population:
         #     if elem == genome:
         self.remove(genomerm)
         self.add(genomerp)
-
 
 # genome1 = Genome([1, 33, 4], 3)
 # genome2 = Genome([1, 33, 5], 4)
