@@ -11,12 +11,24 @@ class Genome:
             fitness (int): solution´s quality
     """
 
-    def __init__(self, minfun, bounds):
+    def __init__(self, bounds=None, minfun=None, array=None, fitness=None):
         # self.array = []
         # for i in range(0, len(bounds)):
         #     self.array.append( random.uniform(bounds[i][0], bounds[i][1], 1)[0] )
-        self.array = list(random.uniform(bounds[0][0], bounds[0][1], len(bounds)))
-        self.fitness = minfun(self.array)
+
+        # if (bounds and not minfun) or (not bounds and minfun) or (array and (bounds or minfun)):
+        #     if not minfun:
+        #         raise BaseException("Parametros erroneos")
+
+        if bounds and minfun:
+            self.array = list(random.uniform(bounds[0][0], bounds[0][1], len(bounds)))
+            self.fitness = minfun(self.array)
+        elif array:
+            self.array = array
+            if fitness:
+                self.fitness = fitness
+            else:
+                self.fitness = 0
 
     def __eq__(self, other):
         """Compare if `other` contains the same values as `self`
