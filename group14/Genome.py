@@ -4,7 +4,7 @@ import numpy as np
 class Genome:
     """Basic class
 
-    It creates a pair, formed by an array and its fitness, in that order.
+    It creates a pair, formed by a list and its fitness, in that order.
 
     Atributes:
             array (list): set of values of a function
@@ -21,7 +21,9 @@ class Genome:
         #         raise BaseException("Parametros erroneos")
 
         if bounds and minfun:
-            self.array = np.random.uniform(bounds[0][0], bounds[0][1], len(bounds))
+            self.array = []
+            for i in range(len(bounds)):
+                self.array = np.append(self.array, np.random.uniform(bounds[i][0], bounds[i][1], 1))
             self.fitness = minfun(self.array)
         elif array is not None:
             self.array = array
@@ -31,13 +33,13 @@ class Genome:
                 self.fitness = 0
 
     def __eq__(self, other):
-        """Compare if `other` contains the same values as `self`
+        """Compare if 'other' contains the same values as 'self'
 
         Args:
             other (Genome): Object which the self object will be compared to.
 
         Returns:
-            boolean: True if both objects contain the same array and fitness.
+            bool: True if both objects contain the same elements in its lists and fitness.
             False otherwise.
         """
         return np.array_equal(self.array, other.array) and self.fitness == other.fitness

@@ -12,8 +12,8 @@ class Population:
 
     def __init__(self, minfun, bounds, psize):
         self.collection = []
-        for _ in range(psize):
-            self.add(Genome(bounds=bounds, minfun=minfun))
+        for _ in range(0, psize):
+            self.add(Genome(minfun=minfun, bounds=bounds))
 
     def __repr__(self):
         """
@@ -22,12 +22,9 @@ class Population:
         Returns:
              str: The population in string format
         """
-        res = '{ '
-        for index, elem in enumerate(self.collection):
-            if index == len(self.collection) - 1:
-                res += f'[ {elem.array}, fitness={elem.fitness} ] }}'
-            else:
-                res += f'[ {elem.array}, fitness={elem.fitness} ], '
+        res = '[ '
+        for elem in self.collection:
+            res += f'[ {elem.array}, fitness={elem.fitness} ], '
         return res
 
     def ascendent_sort(self):
@@ -71,26 +68,24 @@ class Population:
         self.remove(genomerm)
         self.add(genomerp)
 
+# genome1 = Genome([1, 33, 4], 3)
+# genome2 = Genome([1, 33, 5], 4)
+# genome3 = Genome([2, 33, 4], 1)
+#
+# genome4 = Genome([2, 33, 4], -1)
+#
+# prueba = Population([genome1, genome2, genome3])
+# prueba.ascendent_sort()
+#
+# prueba.add(genome4)
+# print(prueba)
+#
+# prueba.remove(genome2)
+# print(prueba)
+
 # def f(sol):
 #     return sum(sol)
 #
 #
 # prueba = Population(f, [(0, 1), (0, 1)], 3)
 # print(prueba)
-#
-# # genome1 = Genome(array=[1, 33, 4],fitness= 3)
-# # genome2 = Genome(array=[1, 33, 5], fitness=4)
-# # genome3 = Genome(array=[2, 33, 4], fitness=1)
-#
-# genome4 = Genome(array=[2, 33, 4], fitness=-1)
-#
-# prueba.ascendent_sort()
-# print(prueba)
-#
-# prueba.add(genome4)
-# print(prueba)
-#
-# prueba.remove(genome4)
-# print(prueba)
-#
-# print(len(prueba.collection[0].array))
