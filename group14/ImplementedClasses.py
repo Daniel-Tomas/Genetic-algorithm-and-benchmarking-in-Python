@@ -1,6 +1,6 @@
 from group14 import AbstractClasses
 import random
-from numpy import subtract, array, clip
+import numpy as np
 
 from group14.Genome import Genome
 
@@ -29,11 +29,10 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
         F = 0.5
         min = bounds[0][0]
         max = bounds[0][1]
-        subtract_res = clip((array(donors[1].array) - array(donors[2].array)), min, max)
-        multiplication_res = clip(F * subtract_res, min, max)
-        addition_res = clip(array(donors[0].array) + multiplication_res, min, max)
-        res_array = list(addition_res)
-        return Genome(array=res_array, fitness=minfun(res_array))
+        subtract_res = np.clip((np.array(donors[1].array) - np.array(donors[2].array)), min, max)
+        multiplication_res = np.clip(F * subtract_res, min, max)
+        addition_res = np.clip(np.array(donors[0].array) + multiplication_res, min, max)
+        return Genome(array=addition_res, fitness=minfun(addition_res))
 
 
 class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
@@ -42,10 +41,11 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
         size = len(target.array)
         j = random.randint(0, size - 1)
         candidate = Genome(array=target.array)
+
         candidate.array[j] = mutant.array[j]
         j = (j + 1) % size
         i = 1
-        while i < size - 1 and random.random() >= CR:
+        while i < size and random.random() < CR:
             candidate.array[j] = mutant.array[j]
             j = (j + 1) % size
             i = i + 1

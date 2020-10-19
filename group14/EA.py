@@ -12,7 +12,7 @@ class EA(object):
         self.population = Population(minfun, bounds, p_size)
 
     def run(self, iterations):
-        print(self.population)
+        print(f'Antes:\n {self.population}\n')
 
         selector = UniformSelectionOperator()
         mutator = Rand1MutationOperator()
@@ -30,7 +30,7 @@ class EA(object):
                 # TODO: Mirar si esta bien hecho el paso por parametros
                 replacer.apply(self.population, target, candidate)
 
-        print(self.population)
+        print(f'Despues:\n {self.population}\n')
 
 
 if __name__ == '__main__':
@@ -38,7 +38,7 @@ if __name__ == '__main__':
         return sum(sol)
 
 
-    mybounds = [(0, 3)] * 10
+    mybounds = [(0, 3)] * 2
 
     myEA = EA(f, mybounds, 50)
 

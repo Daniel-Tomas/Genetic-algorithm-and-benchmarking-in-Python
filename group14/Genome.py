@@ -1,4 +1,4 @@
-from numpy import random
+import numpy as np
 
 
 class Genome:
@@ -21,9 +21,9 @@ class Genome:
         #         raise BaseException("Parametros erroneos")
 
         if bounds and minfun:
-            self.array = list(random.uniform(bounds[0][0], bounds[0][1], len(bounds)))
+            self.array = np.random.uniform(bounds[0][0], bounds[0][1], len(bounds))
             self.fitness = minfun(self.array)
-        elif array:
+        elif array is not None:
             self.array = array
             if fitness:
                 self.fitness = fitness
@@ -40,4 +40,4 @@ class Genome:
             boolean: True if both objects contain the same array and fitness.
             False otherwise.
         """
-        return self.array == other.array and self.fitness == other.fitness
+        return np.array_equal(self.array, other.array) and self.fitness == other.fitness
