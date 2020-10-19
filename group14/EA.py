@@ -19,7 +19,7 @@ class EA(object):
         mixer = ExponentialCrossoverOperator()
         replacer = ElitistReplacementOperator()
 
-        for _ in range(0, iterations):
+        for _ in range(iterations):
             for target in self.population.collection:
                 # List with genomes
                 donors = selector.apply(target, self.population)

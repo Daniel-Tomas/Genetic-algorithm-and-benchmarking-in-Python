@@ -13,7 +13,7 @@ class Genome:
 
     def __init__(self, bounds=None, minfun=None, array=None, fitness=None):
         # self.array = []
-        # for i in range(0, len(bounds)):
+        # for i in range(len(bounds)):
         #     self.array.append( random.uniform(bounds[i][0], bounds[i][1], 1)[0] )
 
         # if (bounds and not minfun) or (not bounds and minfun) or (array and (bounds or minfun)):

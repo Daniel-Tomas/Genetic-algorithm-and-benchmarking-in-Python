@@ -7,7 +7,6 @@ from group14.Genome import Genome
 
 class UniformSelectionOperator(AbstractClasses.SelectionOperator):
 
-    # TODO: Poner bien los range && pensar cambiar todo a numpy.array
     # TODO: Correcion en el maximo y minimo de los genomas al realizar las operaciones, poner nombres bien en ingles
 
     def apply(self, target, population):

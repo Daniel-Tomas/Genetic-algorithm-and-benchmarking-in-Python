@@ -12,7 +12,7 @@ class Population:
 
     def __init__(self, minfun, bounds, psize):
         self.collection = []
-        for _ in range(0, psize):
+        for _ in range(psize):
             self.add(Genome(bounds=bounds, minfun=minfun))
 
     def __repr__(self):
@@ -70,9 +70,6 @@ class Population:
         #     if elem == genome:
         self.remove(genomerm)
         self.add(genomerp)
-
-
-
 
 # def f(sol):
 #     return sum(sol)
