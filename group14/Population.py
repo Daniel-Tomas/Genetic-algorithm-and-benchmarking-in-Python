@@ -4,11 +4,11 @@ from group14.Genome import Genome
 class Population:
     """Basic class
 
-        It creates a collection of Genomes.
+    It creates a collection of Genomes.
 
-        Atributes:
-                Genome (array): Genome class object
-        """
+    Atributes:
+            Genome (array): Genome class object
+    """
 
     def __init__(self, minfun, bounds, psize):
         self.collection = []

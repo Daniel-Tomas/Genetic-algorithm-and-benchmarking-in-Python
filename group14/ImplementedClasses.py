@@ -4,12 +4,25 @@ import numpy as np
 
 from group14.Genome import Genome
 
+"""Basic class
+
+    It includes the different operators corresponding to the differential evolution algorithm.
+
+"""
 
 class UniformSelectionOperator(AbstractClasses.SelectionOperator):
-
     # TODO: Correcion en el maximo y minimo de los genomas al realizar las operaciones, poner nombres bien en ingles
 
     def apply(self, target, population):
+        """Select three random genomes of population different from each other and from the target
+
+        Args:
+            target (Genome): Genome class object selected.
+            population (Population): Object which contains a list of genomes
+
+        Returns:
+            donors (array) : contains three different genomes
+        """
 
         donors = [target]
 
@@ -25,6 +38,18 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
 
 class Rand1MutationOperator(AbstractClasses.MutationOperator):
     def apply(self, minfun, donors, bounds):
+        """It generate a new genome by combining 'donors'.
+
+        Args:
+            minfun (function): Function used to calculate the fitness of a genome.
+            donors (array): It contains three different genomes.
+            bounds (list): It contains the minimum and maximum values that each variable can take from a candidate
+            solution.
+
+        Returns:
+            Genome (Genome) : Returns the genome resulting from the combination of the three genomes passed as a
+            parameter in the 'donors' array.
+        """
         F = 0.5
         mutantArray = []
         i = 0
@@ -45,6 +70,16 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
 
 class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
     def apply(self, minfun, target, mutant):
+        """It returns a new candidate by mixing 'target' and 'mutant'.
+
+        Args:
+            minfun (function): Function used to calculate the fitness of a genome.
+            target (Genome): Genome class object selected.
+            mutant (Genome): The genome which we are going to combine with 'target'.
+
+        Returns:
+            Genome (Genome) : It is the genome resulting from the combination between 'target' and 'mutant'.
+        """
         CR = 0.5
         size = len(target.array)
         j = random.randint(0, size - 1)
@@ -63,5 +98,12 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
 
 class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
     def apply(self, population, target, candidate):
+        """It include in 'population' the genome with the best fitness between 'target' and 'candidate'
+
+        Args:
+            population (Population): Function used to calculate the fitness of a genome.
+            target (Genome): Genome class object selected.
+            candidate (Genome): Candidate to have better fitness than our 'target' genome.
+        """
         if candidate.fitness < target.fitness:
             population.replace(target, candidate)
