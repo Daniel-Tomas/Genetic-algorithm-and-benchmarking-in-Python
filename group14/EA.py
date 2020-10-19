@@ -43,4 +43,4 @@ if __name__ == '__main__':
 
     myEA = EA(f, mybounds, 20)
 
-    myEA.run(10000)
+    myEA.run(1000)
