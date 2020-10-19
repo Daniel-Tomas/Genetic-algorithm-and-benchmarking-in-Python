@@ -66,10 +66,9 @@ class Population:
             genomerm(array): Genome class object
             genomerp(array): Genome class object
         """
-        # for elem in self.collection:
-        #     if elem == genome:
         self.remove(genomerm)
         self.add(genomerp)
+
 
 # def f(sol):
 #     return sum(sol)

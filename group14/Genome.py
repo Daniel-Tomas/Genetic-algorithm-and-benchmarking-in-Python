@@ -22,20 +22,20 @@ class Genome:
                 self.array = np.append(self.array, np.random.uniform(bounds[i][0], bounds[i][1], 1))
             self.fitness = minfun(self.array)
         elif array is not None:
-            self.array = array
+            self.array = np.copy(array)
             if fitness:
                 self.fitness = fitness
             else:
                 self.fitness = 0
 
-    def __eq__(self, other):
-        """Compare if 'other' contains the same values as 'self'
-
-        Args:
-            other (Genome): Object which the self object will be compared to.
-
-        Returns:
-            bool: True if both objects contain the same elements in its lists and fitness.
-            False otherwise.
-        """
-        return np.array_equal(self.array, other.array) and self.fitness == other.fitness
+    # def __eq__(self, other):
+    #     """Compare if 'other' contains the same values as 'self'
+    #
+    #     Args:
+    #         other (Genome): Object which the self object will be compared to.
+    #
+    #     Returns:
+    #         bool: True if both objects contain the same elements in its lists and fitness.
+    #         False otherwise.
+    #     """
+    #     return np.array_equal(self.array, other.array) and self.fitness == other.fitness

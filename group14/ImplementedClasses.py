@@ -63,5 +63,5 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
 
 class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
     def apply(self, population, target, candidate):
-        if candidate.fitness > target.fitness:
+        if candidate.fitness < target.fitness:
             population.replace(target, candidate)
