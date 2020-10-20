@@ -17,7 +17,7 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
         """Select three random genomes of population different from each other and from the target.
 
         Args:
-            target (Genome): Genome class object selected.
+            target (Genome): Genome object selected to work it.
             population (Population): Object which contains a list of genomes.
 
         Returns:
@@ -74,7 +74,7 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
 
         Args:
             minfun (function): Function used to calculate the fitness of a genome.
-            target (Genome): Genome class object selected.
+            target (Genome): Genome object selected to work it.
             mutant (Genome): The genome which we are going to combine with 'target'.
 
         Returns:
@@ -101,8 +101,8 @@ class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
         """It include in 'population' the genome with the best fitness between 'target' and 'candidate'
 
         Args:
-            population (Population): Function used to calculate the fitness of a genome.
-            target (Genome): Genome class object selected.
+            population (Population): Object which contains a list of genomes.
+            target (Genome): Genome object selected to work it.
             candidate (Genome): Candidate to have better fitness than our 'target' genome.
         """
         if candidate.fitness < target.fitness:
