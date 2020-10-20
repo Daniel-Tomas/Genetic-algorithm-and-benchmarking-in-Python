@@ -20,7 +20,7 @@ class Population:
         It casts the Population elements in String format.
 
         Returns:
-             str: The population in string format
+             str: The population in string format.
         """
         res = '{ '
         for index, elem in enumerate(self.collection):
@@ -43,7 +43,7 @@ class Population:
     def add(self, genome):
         """Add an element of type Genome to the end of 'self'
         Args:
-            genome(array): Genome class object
+            genome(array): Genome class object.
         """
         self.collection.append(genome)
 
@@ -59,12 +59,12 @@ class Population:
         self.collection.remove(genome)
 
     def replace(self, genomerm, genomerp):
-        """Replace genomerm with genomerp in the 'self' array
+        """Replace genomerm with genomerp in the 'self' array.
         Excepcion en caso de que no esté el elemento a elminar
 
         Args:
-            genomerm(array): Genome class object
-            genomerp(array): Genome class object
+            genomerm(array): Genome class object.
+            genomerp(array): Genome class object.
         """
         self.remove(genomerm)
         self.add(genomerp)

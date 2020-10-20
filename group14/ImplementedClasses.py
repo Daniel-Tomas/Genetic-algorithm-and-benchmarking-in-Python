@@ -14,14 +14,14 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
     # TODO: Correcion en el maximo y minimo de los genomas al realizar las operaciones, poner nombres bien en ingles
 
     def apply(self, target, population):
-        """Select three random genomes of population different from each other and from the target
+        """Select three random genomes of population different from each other and from the target.
 
         Args:
             target (Genome): Genome class object selected.
-            population (Population): Object which contains a list of genomes
+            population (Population): Object which contains a list of genomes.
 
         Returns:
-            donors (array) : contains three different genomes
+            donors (array) : contains three different genomes.
         """
 
         donors = [target]

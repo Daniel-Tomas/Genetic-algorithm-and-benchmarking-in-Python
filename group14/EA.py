@@ -7,11 +7,24 @@ class EA(object):
     """
 
     def __init__(self, minfun, bounds, p_size):
+        """It initialize the attributes.
+
+        Args:
+            minfun (function): Function used to calculate the fitness of a genome.
+            bounds (list): It contains the minimum and maximum values that each variable can take from a candidate
+            solution.
+            p_size (int): Maximum size of our population.
+        """
         self.minfun = minfun
         self.bounds = bounds
         self.population = Population(minfun, bounds, p_size)
 
     def run(self, iterations):
+        """It run the Differential Evolution.
+
+        Args:
+            iterations (int): Number of iterations to be made to the Differential Evolution.
+        """
         print(f'Antes:\n {self.population}\n')
 
         selector = UniformSelectionOperator()
