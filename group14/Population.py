@@ -7,7 +7,7 @@ class Population:
     It creates a collection of Genomes.
 
     Atributes:
-            Genome (array): Genome class object
+            Collection (list): list of genomes
     """
 
     def __init__(self, minfun, bounds, psize):
