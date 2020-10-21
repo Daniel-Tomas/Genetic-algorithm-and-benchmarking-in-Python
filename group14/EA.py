@@ -3,18 +3,16 @@ from group14.Population import Population
 
 
 class EA(object):
-    """docstring for EA
-    """
+    """This class is the entry point to the execution of the algorithm.
 
-    def __init__(self, minfun, bounds, p_size):
-        """It initialize the attributes.
-
-        Args:
+    Attributes:
             minfun (function): Function used to calculate the fitness of a genome.
             bounds (list): It contains the minimum and maximum values that each variable can take from a candidate
                 solution.
             p_size (int): Maximum size of our population.
-        """
+    """
+
+    def __init__(self, minfun, bounds, p_size):
         self.minfun = minfun
         self.bounds = bounds
         self.population = Population(minfun, bounds, p_size)
@@ -49,6 +47,7 @@ class EA(object):
 if __name__ == '__main__':
     def f(array):
         return array[0] ** 2 + array[1] ** 2
+
 
     mybounds = [(0, 10), (0, 10)]
 

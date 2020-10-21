@@ -4,12 +4,6 @@ import numpy as np
 
 from group14.Genome import Genome
 
-"""Basic class
-
-    It includes the different operators corresponding to the differential evolution algorithm.
-
-"""
-
 class UniformSelectionOperator(AbstractClasses.SelectionOperator):
     # TODO: Correcion en el maximo y minimo de los genomas al realizar las operaciones, poner nombres bien en ingles
 
@@ -21,7 +15,7 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
             population (Population): Object which contains a list of genomes.
 
         Returns:
-            donors (array) : contains three different genomes.
+            donors (array) : Contains three different genomes.
         """
 
         donors = [target]
@@ -38,17 +32,17 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
 
 class Rand1MutationOperator(AbstractClasses.MutationOperator):
     def apply(self, minfun, donors, bounds):
-        """It generate a new genome by combining 'donors'.
+        """Generate a new genome by combining 'donors'.
 
         Args:
             minfun (function): Function used to calculate the fitness of a genome.
-            donors (array): It contains three different genomes.
-            bounds (list): It contains the minimum and maximum values that each variable can take from a candidate
-            solution.
+            donors (array): Contains three different genomes.
+            bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
+                solution.
 
         Returns:
             Genome (Genome) : Returns the genome resulting from the combination of the three genomes passed as a
-            parameter in the 'donors' array.
+                parameter in the 'donors' array.
         """
         F = 0.5
         mutantArray = []
@@ -70,7 +64,7 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
 
 class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
     def apply(self, minfun, target, mutant):
-        """It returns a new candidate by mixing 'target' and 'mutant'.
+        """Returns a new candidate by mixing 'target' and 'mutant'.
 
         Args:
             minfun (function): Function used to calculate the fitness of a genome.
@@ -98,7 +92,7 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
 
 class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
     def apply(self, population, target, candidate):
-        """It include in 'population' the genome with the best fitness between 'target' and 'candidate'
+        """Include in 'population' the genome with the best fitness between 'target' and 'candidate'
 
         Args:
             population (Population): Object which contains a list of genomes.

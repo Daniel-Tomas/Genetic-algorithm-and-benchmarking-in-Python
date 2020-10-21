@@ -6,7 +6,7 @@ class Genome:
 
     It creates a pair, formed by a list and its fitness, in that order.
 
-    Atributes:
+    Attributes:
             array (list): set of values of a function
             fitness (int): solution´s quality
     """

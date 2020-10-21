@@ -6,7 +6,7 @@ class Population:
 
     It creates a collection of Genomes.
 
-    Atributes:
+    Attributes:
             Collection (list): list of genomes
     """
 
@@ -17,7 +17,7 @@ class Population:
 
     def __repr__(self):
         """
-        It casts the Population elements in String format.
+        Casts the Population elements in String format.
 
         Returns:
              str: The population in string format.
@@ -31,12 +31,12 @@ class Population:
         return res
 
     def ascendent_sort(self):
-        """It sort Genomes of 'self' by fitness in ascending order.
+        """Sort Genomes of 'self' by fitness in ascending order.
         """
         self.collection.sort(key=lambda x: x.fitness)
 
     def descendent_sort(self):
-        """It sort Genomes of 'self' by fitness in descending order.
+        """Sort Genomes of 'self' by fitness in descending order.
         """
         self.collection.sort(key=lambda x: x.fitness, reverse=True)
 
