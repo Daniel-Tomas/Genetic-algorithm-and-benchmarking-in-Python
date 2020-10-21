@@ -12,7 +12,7 @@ class EA(object):
         Args:
             minfun (function): Function used to calculate the fitness of a genome.
             bounds (list): It contains the minimum and maximum values that each variable can take from a candidate
-            solution.
+                solution.
             p_size (int): Maximum size of our population.
         """
         self.minfun = minfun
@@ -20,10 +20,10 @@ class EA(object):
         self.population = Population(minfun, bounds, p_size)
 
     def run(self, iterations):
-        """It run the Differential Evolution.
+        """Runs the Differential Evolution algorithm.
 
         Args:
-            iterations (int): Number of iterations to be made to the Differential Evolution.
+            iterations (int): Number of iterations to be made by the algorithm.
         """
         print(f'Antes:\n {self.population}\n')
 
@@ -40,7 +40,6 @@ class EA(object):
                 mutant = mutator.apply(self.minfun, donors, self.bounds)
                 # Genome modified by replacing a few random positions
                 candidate = mixer.apply(self.minfun, target, mutant)
-                # TODO: Mirar si esta bien hecho el paso por parametros
                 # target is replaced by candidate from the population if candidate has less fitness than target
                 replacer.apply(self.population, target, candidate)
 
@@ -48,12 +47,11 @@ class EA(object):
 
 
 if __name__ == '__main__':
-    def f(sol):
-        return sum(sol)
+    def f(array):
+        return array[0] ** 2 + array[1] ** 2
 
+    mybounds = [(0, 10), (0, 10)]
 
-    mybounds = [(0, 10), (10, 20), (20, 30), (30, 40)]
+    myEA = EA(f, mybounds, 50)
 
-    myEA = EA(f, mybounds, 20)
-
-    myEA.run(1000)
+    myEA.run(10000)
