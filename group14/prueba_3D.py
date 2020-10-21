@@ -20,7 +20,7 @@
 
 
 
-%matplotlib notebook
+# %matplotlib notebook
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 from matplotlib import cm
@@ -30,21 +30,28 @@ import numpy as np
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 
-z_points = 50 * np.random.random(100)
-x_points = np.cos(z_points) + 0.1 * np.random.randn(100)
-y_points = np.sin(z_points) + 0.1 * np.random.randn(100)
-ax.scatter3D(x_points, y_points, z_points, c=z_points, cmap='hsv')
+
+x_points = 10 * np.random.random(100)
+y_points = 10 * np.random.random(100)
+z_points = np.sqrt(x_points ** 2 + y_points ** 2)
+ax.scatter3D(x_points, y_points, z_points, c=z_points, cmap=cm.coolwarm,alpha=1)
 
 # Make data.
-X = np.arange(-5, 5, 0.25)
-Y = np.arange(-5, 5, 0.25)
+X = np.arange(-10, 10, 0.25)
+Y = np.arange(-10, 10, 0.25)
 X, Y = np.meshgrid(X, Y)
-R = X ** 2 + Y ** 2
+R = np.sqrt(X ** 2 + Y ** 2)
 Z = R
 
 # Plot the surface.
-surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm,
+surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm, alpha=0.2,
                        linewidth=0, antialiased=False)
+
+# theCM = cm.get_cmap()
+# theCM._init()
+# # Plot the surface.
+# surf = ax.plot_surface(X, Y, Z, cmap=theCM)
+
 
 # Customize the z axis.
 
@@ -55,12 +62,12 @@ ax.zaxis.set_major_formatter(FormatStrFormatter('%.02f'))
 # Add a color bar which maps values to colors.
 fig.colorbar(surf, shrink=0.5, aspect=5)
 
-# for angle in range(0, 360):
-#     ax.view_init(30, angle)
-#     plt.draw()
-#     plt.pause(.02)
+ax.set_xlabel('x label')
+ax.set_ylabel('y label')
+ax.set_zlabel('z label')
 
 plt.show()
+
 
 
 
