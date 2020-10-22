@@ -43,7 +43,7 @@ class Population:
     def add(self, genome):
         """Add an element of type Genome to the end of 'self'
         Args:
-            genome(array): Genome class object.
+            genome(array): Genome class object to be added to the end of 'self'.
         """
         self.collection.append(genome)
 
@@ -52,7 +52,7 @@ class Population:
         Excepcion en caso de que no esté el elemento a elminar
 
         Args:
-            genome(array): Genome class object
+            genome(array): Genome class object that will be removed from 'self'.
         """
         # for elem in self.collection:
         #     if elem == genome:
@@ -63,8 +63,8 @@ class Population:
         Excepcion en caso de que no esté el elemento a elminar
 
         Args:
-            genomerm(array): Genome class object.
-            genomerp(array): Genome class object.
+            genomerm(array): Genome class object that will be removed from 'self'.
+            genomerp(array): Genome class object to replace 'genomerm'.
         """
         self.remove(genomerm)
         self.add(genomerp)

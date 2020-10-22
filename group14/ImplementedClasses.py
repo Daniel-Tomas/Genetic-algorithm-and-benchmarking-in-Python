@@ -15,7 +15,7 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
             population (Population): Object which contains a list of genomes.
 
         Returns:
-            donors (array) : Contains three different genomes.
+            donors (array) : Contains three different genomes obtained randomly from 'population'.
         """
 
         donors = [target]
