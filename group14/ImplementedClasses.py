@@ -4,8 +4,10 @@ import numpy as np
 
 from group14.Genome import Genome
 
+
 class UniformSelectionOperator(AbstractClasses.SelectionOperator):
-    # TODO: Correcion en el maximo y minimo de los genomas al realizar las operaciones, poner nombres bien en ingles
+    # TODO: Añadir comentarios a las funciones cambiadas, sobre todo a los constructores de dichas funciones.
+    # TODO: comprobar correcto funcionamiento del algoritmo y comentar clase EA ya que ahora devuelve el mejor genoma
 
     def apply(self, target, population):
         """Select three random genomes of population different from each other and from the target.
@@ -31,7 +33,13 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
 
 
 class Rand1MutationOperator(AbstractClasses.MutationOperator):
-    def apply(self, minfun, donors, bounds):
+    def __init__(self, F=None):
+        if F:
+            self.F = F
+        else:
+            self.F = 0.5
+
+    def apply(self, donors, bounds):
         """Generate a new genome by combining 'donors'.
 
         Args:
@@ -44,26 +52,31 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
             Genome (Genome) : Returns the genome resulting from the combination of the three genomes passed as a
                 parameter in the 'donors' array.
         """
-        F = 0.5
         mutantArray = []
         i = 0
         for i in range(len(bounds)):
             min = bounds[i][0]
             max = bounds[i][1]
             subtract_res = donors[1].array[i] - donors[2].array[i]
-            multiplication_res = F * subtract_res
+            multiplication_res = self.F * subtract_res
             addition_res = donors[0].array[i] + multiplication_res
             if (addition_res < min):
                 addition_res = min
             elif (addition_res > max):
                 addition_res = max
-
             mutantArray = np.append(mutantArray, addition_res)
-        return Genome(array=mutantArray, fitness=minfun(mutantArray))
+        return Genome(array=mutantArray, fitness=0)
 
 
 class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
-    def apply(self, minfun, target, mutant):
+    def __init__(self, minfun, CR=None):
+        self.minfun = minfun
+        if CR:
+            self.CR = CR
+        else:
+            self.CR = 0.1
+
+    def apply(self, target, mutant):
         """Returns a new candidate by mixing 'target' and 'mutant'.
 
         Args:
@@ -74,7 +87,6 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
         Returns:
             Genome (Genome) : It is the genome resulting from the combination between 'target' and 'mutant'.
         """
-        CR = 0.5
         size = len(target.array)
         j = random.randint(0, size - 1)
         candidate = Genome(array=target.array)
@@ -82,12 +94,12 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
         candidate.array[j] = mutant.array[j]
         j = (j + 1) % size
         i = 1
-        while i < size and random.random() < CR:
+        while i < size and random.random() < self.CR:
             candidate.array[j] = mutant.array[j]
             j = (j + 1) % size
             i = i + 1
 
-        return Genome(array=candidate.array, fitness=minfun(candidate.array))
+        return Genome(array=candidate.array, fitness=self.minfun(candidate.array))
 
 
 class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):

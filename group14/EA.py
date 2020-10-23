@@ -1,5 +1,6 @@
 from group14.ImplementedClasses import *
 from group14.Population import Population
+from benchmarks import functions as fun
 
 
 class EA(object):
@@ -23,11 +24,10 @@ class EA(object):
         Args:
             iterations (int): Number of iterations to be made by the algorithm.
         """
-        print(f'Antes:\n {self.population}\n')
-
+        print(f'Before:\n {self.population}\n')
         selector = UniformSelectionOperator()
         mutator = Rand1MutationOperator()
-        mixer = ExponentialCrossoverOperator()
+        mixer = ExponentialCrossoverOperator(self.minfun)
         replacer = ElitistReplacementOperator()
 
         for _ in range(iterations):
@@ -35,22 +35,26 @@ class EA(object):
                 # List with genomes who will be the donors
                 donors = selector.apply(target, self.population)
                 # Genome modified (mutant)
-                mutant = mutator.apply(self.minfun, donors, self.bounds)
+                mutant = mutator.apply(donors, self.bounds)
                 # Genome modified by replacing a few random positions
-                candidate = mixer.apply(self.minfun, target, mutant)
+                candidate = mixer.apply(target, mutant)
                 # target is replaced by candidate from the population if candidate has less fitness than target
                 replacer.apply(self.population, target, candidate)
 
-        print(f'Despues:\n {self.population}\n')
+        print(f'After:\n {self.population}\n')
+        self.population.descendent_sort()
+        bestGenome = self.population.collection[0]
+        print(f'Best Genome: {bestGenome.array}, fitness={bestGenome.fitness} ')
+        return bestGenome
 
 
 if __name__ == '__main__':
     def f(array):
-        return array[0] ** 2 + array[1] ** 2
+        return fun.sphere(array)
 
 
-    mybounds = [(0, 10), (0, 10)]
+    mybounds = [(0, 10), (10, 20), (20, 30), (30, 40)]
 
     myEA = EA(f, mybounds, 50)
 
-    myEA.run(10000)
+    bestGenome = myEA.run(100)
