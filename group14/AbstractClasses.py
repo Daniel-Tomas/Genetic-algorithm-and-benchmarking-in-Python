@@ -14,7 +14,7 @@ class SelectionOperator(ABC):
 
 class MutationOperator(ABC):
     @abstractmethod
-    def apply(self, minfun, donors, bounds):
+    def apply(self, donors, bounds):
         """
         Args:
             minfun (function): Function used to calculate the fitness of a genome.
@@ -27,7 +27,7 @@ class MutationOperator(ABC):
 
 class CrossoverOperator(ABC):
     @abstractmethod
-    def apply(self, minfun, target, mutant):
+    def apply(self, target, mutant):
         """
         Args:
             minfun (function): Function used to calculate the fitness of a genome.
