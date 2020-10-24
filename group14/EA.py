@@ -43,18 +43,18 @@ class EA(object):
 
         print(f'After:\n {self.population}\n')
         self.population.descendent_sort()
-        bestGenome = self.population.collection[0]
-        print(f'Best Genome: {bestGenome.array}, fitness={bestGenome.fitness} ')
-        return bestGenome
+        best_genome = self.population.collection[0]
+        print(f'Best Genome: {best_genome.array}, fitness={best_genome.fitness} ')
+        return best_genome
 
 
 if __name__ == '__main__':
     def f(array):
-        return fun.sphere(array)
+        return fun.ackley(array)
 
 
     mybounds = [(0, 10), (10, 20), (20, 30), (30, 40)]
 
-    myEA = EA(f, mybounds, 50)
+    myEA = EA(f, mybounds, 4)
 
-    bestGenome = myEA.run(100)
+    bestGenome = myEA.run(10000)

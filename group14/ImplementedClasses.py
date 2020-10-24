@@ -9,6 +9,11 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
     # TODO: Añadir comentarios a las funciones cambiadas, sobre todo a los constructores de dichas funciones.
     # TODO: comprobar correcto funcionamiento del algoritmo y comentar clase EA ya que ahora devuelve el mejor genoma
 
+    """Basic class
+
+    This class inherits from the abstract class 'SelectionOperator'.
+    """
+
     def apply(self, target, population):
         """Select three random genomes of population different from each other and from the target.
 
@@ -33,17 +38,21 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
 
 
 class Rand1MutationOperator(AbstractClasses.MutationOperator):
-    def __init__(self, F=None):
-        if F:
-            self.F = F
-        else:
-            self.F = 0.5
+    """Basic class
+
+    This class inherits from the abstract class 'MutationOperator'.
+
+    Attributes:
+            F (float): Will be used as an element in the mutation operation.
+    """
+
+    def __init__(self, F=0.5):
+        self.F = F
 
     def apply(self, donors, bounds):
         """Generate a new genome by combining 'donors'.
 
         Args:
-            minfun (function): Function used to calculate the fitness of a genome.
             donors (array): Contains three different genomes.
             bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
                 solution.
@@ -52,35 +61,40 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
             Genome (Genome) : Returns the genome resulting from the combination of the three genomes passed as a
                 parameter in the 'donors' array.
         """
-        mutantArray = []
+        mutant_array = []
         i = 0
         for i in range(len(bounds)):
-            min = bounds[i][0]
-            max = bounds[i][1]
+            min_ = bounds[i][0]
+            max_ = bounds[i][1]
             subtract_res = donors[1].array[i] - donors[2].array[i]
             multiplication_res = self.F * subtract_res
             addition_res = donors[0].array[i] + multiplication_res
-            if (addition_res < min):
-                addition_res = min
-            elif (addition_res > max):
-                addition_res = max
-            mutantArray = np.append(mutantArray, addition_res)
-        return Genome(array=mutantArray, fitness=0)
+            if (addition_res < min_):
+                addition_res = min_
+            elif (addition_res > max_):
+                addition_res = max_
+            mutant_array = np.append(mutant_array, addition_res)
+        return Genome(array=mutant_array, fitness=0)
 
 
 class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
-    def __init__(self, minfun, CR=None):
+    """Basic class
+
+    This class inherits from the abstract class 'CrossoverOperator'.
+
+    Attributes:
+            minfun (function): Function used to calculate the fitness of a genome.
+            CR (float): This parameter will be used as a condition to continue doing the crossover operation.
+    """
+
+    def __init__(self, minfun, CR=0.1):
         self.minfun = minfun
-        if CR:
-            self.CR = CR
-        else:
-            self.CR = 0.1
+        self.CR = CR
 
     def apply(self, target, mutant):
         """Returns a new candidate by mixing 'target' and 'mutant'.
 
         Args:
-            minfun (function): Function used to calculate the fitness of a genome.
             target (Genome): Genome object selected to work it.
             mutant (Genome): The genome which we are going to combine with 'target'.
 
@@ -103,6 +117,11 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
 
 
 class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
+    """Basic class
+
+    This class inherits from the abstract class 'ReplacementOperator'.
+    """
+
     def apply(self, population, target, candidate):
         """Include in 'population' the genome with the best fitness between 'target' and 'candidate'
 
