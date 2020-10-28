@@ -23,6 +23,9 @@ class EA(object):
 
         Args:
             iterations (int): Number of iterations to be made by the algorithm.
+
+        Returns:
+            best_genome (Genome): Optimal solution calculated by the algorithm
         """
         print(f'Before:\n {self.population}\n')
         selector = UniformSelectionOperator()
