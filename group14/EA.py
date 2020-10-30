@@ -17,6 +17,7 @@ class EA(object):
         self.minfun = minfun
         self.bounds = bounds
         self.population = Population(minfun, bounds, p_size)
+        self.best_genome = None
 
     def run(self, iterations):
         """Runs the Differential Evolution algorithm.
@@ -27,9 +28,9 @@ class EA(object):
         Returns:
             best_genome (Genome): Optimal solution calculated by the algorithm
         """
-        print(f'Before:\n {self.population}\n')
+        # print(f'Before:\n {self.population}\n')
         selector = UniformSelectionOperator()
-        mutator = Rand1MutationOperator()
+        mutator = Rand1MutationOperator(0.2)
         mixer = ExponentialCrossoverOperator(self.minfun)
         replacer = ElitistReplacementOperator()
 
@@ -44,20 +45,23 @@ class EA(object):
                 # target is replaced by candidate from the population if candidate has less fitness than target
                 replacer.apply(self.population, target, candidate)
 
-        print(f'After:\n {self.population}\n')
+        # print(f'After:\n {self.population}\n')
+
         self.population.descendent_sort()
-        best_genome = self.population.collection[0]
-        print(f'Best Genome: {best_genome.array}, fitness={best_genome.fitness} ')
-        return best_genome
+        self.best_genome = self.population.collection[0]
+        # print(f'Best Genome: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+
+    def best(self):
+        return self.best_genome
 
 
-if __name__ == '__main__':
-    def f(array):
-        return fun.ackley(array)
-
-
-    mybounds = [(0, 10), (10, 20), (20, 30), (30, 40)]
-
-    myEA = EA(f, mybounds, 4)
-
-    bestGenome = myEA.run(10000)
+# if __name__ == '__main__':
+#     def f(array):
+#         return fun.ackley(array)
+#
+#
+#     mybounds = [(0, 10), (10, 20), (20, 30), (30, 40)]
+#
+#     myEA = EA(f, mybounds, 4)
+#
+#     bestGenome = myEA.run(10000)
