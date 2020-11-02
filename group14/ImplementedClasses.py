@@ -59,7 +59,7 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
 
         Returns:
             Genome (Genome) : Returns the genome resulting from the combination of the three genomes passed as a
-                parameter in the 'donors' array.
+            parameter in the 'donors' array.
         """
         mutant_array = []
         i = 0
@@ -83,8 +83,8 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
     This class inherits from the abstract class 'CrossoverOperator'.
 
     Attributes:
-            minfun (function): Function used to calculate the fitness of a genome.
-            CR (float): This parameter will be used as a condition to continue doing the crossover operation.
+        minfun (function): Function used to calculate the fitness of a genome.
+        CR (float): This parameter will be used as a condition to continue doing the crossover operation.
     """
 
     def __init__(self, minfun, CR=0.1):

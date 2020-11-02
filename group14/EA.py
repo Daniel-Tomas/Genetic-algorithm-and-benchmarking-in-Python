@@ -6,17 +6,17 @@ from benchmarks import functions as fun
 class EA(object):
     """This class is the entry point to the execution of the algorithm.
 
-    Attributes:
-            minfun (function): Function used to calculate the fitness of a genome.
-            bounds (list): It contains the minimum and maximum values that each variable can take from a candidate
-                solution.
-            p_size (int): Maximum size of our population.
+    Args:
+        minfun (function): Function used to calculate the fitness of a genome.
+        bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
+            solution.
+        p_size (int): Maximum size of our population.
     """
 
-    def __init__(self, minfun, bounds, p_size):
-        self.minfun = minfun
-        self.bounds = bounds
-        self.population = Population(minfun, bounds, p_size)
+    def __init__(self, minfun_, bounds_, p_size):
+        self.minfun = minfun_
+        self.bounds = bounds_
+        self.population = Population(minfun_, bounds_, p_size)
         self.best_genome = None
 
     def run(self, iterations):
