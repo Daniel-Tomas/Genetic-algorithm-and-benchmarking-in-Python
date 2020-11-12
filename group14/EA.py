@@ -6,10 +6,17 @@ from benchmarks import functions as fun
 class EA(object):
     """This class is the entry point to the execution of the algorithm.
 
-    Args:
+    Attributes:
         minfun (function): Function used to calculate the fitness of a genome.
         bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
             solution.
+        population (Population): Object which contains a list of genomes.
+        best_genome (Genome): Optimal solution calculated by the algorithm.
+
+
+    Args:
+        minfun (function): The function to be set.
+        bounds (list): List of values to be set.
         p_size (int): Maximum size of our population.
     """
 
@@ -26,7 +33,7 @@ class EA(object):
             iterations (int): Number of iterations to be made by the algorithm.
 
         Returns:
-            best_genome (Genome): Optimal solution calculated by the algorithm
+            best_genome (Genome): Optimal solution calculated by the algorithm.
         """
         # print(f'Before:\n {self.population}\n')
         selector = UniformSelectionOperator()

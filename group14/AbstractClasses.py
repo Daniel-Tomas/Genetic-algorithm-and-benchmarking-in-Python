@@ -18,8 +18,8 @@ class MutationOperator(ABC):
         """
         Args:
             minfun (function): Function used to calculate the fitness of a genome.
-            donors (array): It contains three different genomes.
-            bounds (list): It contains the minimum and maximum values that each variable can take from a candidate
+            donors (array): Contains three different genomes.
+            bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
             solution.
         """
         ...

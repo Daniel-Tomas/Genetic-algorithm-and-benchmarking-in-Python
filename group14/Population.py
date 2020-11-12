@@ -4,10 +4,16 @@ from group14.Genome import Genome
 class Population:
     """Basic class
 
-    It creates a collection of Genomes.
+    Creates a collection of Genomes.
 
     Attributes:
             Collection (list): list of genomes
+
+    Args:
+        minfun (function): Function used to calculate the fitness of a genome.
+        bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
+            solution.
+        p_size (int): Maximum size of our population.
     """
 
     def __init__(self, minfun, bounds, psize):

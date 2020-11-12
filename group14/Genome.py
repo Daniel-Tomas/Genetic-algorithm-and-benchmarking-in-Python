@@ -4,11 +4,18 @@ import numpy as np
 class Genome:
     """Basic class
 
-    It creates a pair, formed by a list and its fitness, in that order.
+    Creates a pair, formed by a list and its fitness, in that order.
 
     Attributes:
-            array (list): set of values of a function
-            fitness (int): solution´s quality
+        array (list): set of values of a function
+        fitness (int): solution´s quality
+
+    Args:
+        bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
+            solution.
+        minfun (function): Function used to calculate the fitness of a genome.
+        array (list): List of values to be set.
+        fitness (int): Int to be set.
     """
 
     def __init__(self, bounds=None, minfun=None, array=None, fitness=None):

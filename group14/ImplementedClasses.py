@@ -43,7 +43,10 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
     This class inherits from the abstract class 'MutationOperator'.
 
     Attributes:
-            F (float): Will be used as an element in the mutation operation.
+        F (float): Will be used as an element in the mutation operation.
+
+    Args:
+        F (float): Float to be set.
     """
 
     def __init__(self, F=0.5):
@@ -85,6 +88,10 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
     Attributes:
         minfun (function): Function used to calculate the fitness of a genome.
         CR (float): This parameter will be used as a condition to continue doing the crossover operation.
+
+    Args:
+        minfun (function): Function to be set.
+        CR (float): float tu be set.
     """
 
     def __init__(self, minfun, CR=0.1):
@@ -99,7 +106,7 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
             mutant (Genome): The genome which we are going to combine with 'target'.
 
         Returns:
-            Genome (Genome) : It is the genome resulting from the combination between 'target' and 'mutant'.
+            Genome (Genome) : Is the genome resulting from the combination between 'target' and 'mutant'.
         """
         size = len(target.array)
         j = random.randint(0, size - 1)
