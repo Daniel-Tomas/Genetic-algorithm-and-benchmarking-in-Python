@@ -19,32 +19,31 @@
 # plt.show()
 
 
-
 # %matplotlib notebook
 from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 import numpy as np
+from benchmarks import functions as fun
 
 fig = plt.figure()
 ax = fig.gca(projection='3d')
 
-
-x_points = 10 * np.random.random(100)
-y_points = 10 * np.random.random(100)
-z_points = np.sqrt(x_points ** 2 + y_points ** 2)
-ax.scatter3D(x_points, y_points, z_points, c=z_points, cmap=cm.coolwarm,alpha=1)
+# x_points = 10 * np.random.random(100)
+# y_points = 10 * np.random.random(100)
+# z_points = np.sqrt(x_points ** 2 + y_points ** 2)
+# ax.scatter3D(x_points, y_points, z_points, c=z_points, cmap=cm.coolwarm, alpha=1)
 
 # Make data.
-X = np.arange(-10, 10, 0.25)
-Y = np.arange(-10, 10, 0.25)
+X = np.arange(0, 40, 0.25)
+Y = np.arange(0, 40, 0.25)
 X, Y = np.meshgrid(X, Y)
 R = np.sqrt(X ** 2 + Y ** 2)
 Z = R
 
 # Plot the surface.
-surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm, alpha=0.2,
+surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm, alpha=0.8,
                        linewidth=0, antialiased=False)
 
 # theCM = cm.get_cmap()
@@ -67,9 +66,6 @@ ax.set_ylabel('y label')
 ax.set_zlabel('z label')
 
 plt.show()
-
-
-
 
 # import numpy as np
 # import matplotlib.pyplot as plt

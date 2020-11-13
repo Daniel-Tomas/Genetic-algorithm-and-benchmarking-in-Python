@@ -44,37 +44,41 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
 
     Attributes:
         F (float): Will be used as an element in the mutation operation.
+        bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
+                solution.
 
     Args:
-        F (float): Float to be set.
+        F_ (float): Float to be set.
+        bounds_ (list): Bounds to be set.
     """
 
-    def __init__(self, F=0.5):
-        self.F = F
+    def __init__(self, bounds_, F_=0.5):
+        self.bounds = bounds_
+        self.F = F_
+        self.selector = UniformSelectionOperator()
 
-    def apply(self, donors, bounds):
+    def apply(self, target, population):
         """Generate a new genome by combining 'donors'.
 
-        Args:
-            donors (array): Contains three different genomes.
-            bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
-                solution.
+       Args:
+            target (Genome): Genome object selected to work it.
+            population (Population): Object which contains a list of genomes.
 
         Returns:
             Genome (Genome) : Returns the genome resulting from the combination of the three genomes passed as a
             parameter in the 'donors' array.
         """
+        donors = self.selector.apply(target, population)
         mutant_array = []
-        i = 0
-        for i in range(len(bounds)):
-            min_ = bounds[i][0]
-            max_ = bounds[i][1]
+        for i in range(len(self.bounds)):
+            min_ = self.bounds[i][0]
+            max_ = self.bounds[i][1]
             subtract_res = donors[1].array[i] - donors[2].array[i]
             multiplication_res = self.F * subtract_res
             addition_res = donors[0].array[i] + multiplication_res
-            if (addition_res < min_):
+            if addition_res < min_:
                 addition_res = min_
-            elif (addition_res > max_):
+            elif addition_res > max_:
                 addition_res = max_
             mutant_array = np.append(mutant_array, addition_res)
         return Genome(array=mutant_array, fitness=0)
