@@ -35,43 +35,44 @@ class EA(object):
         Returns:
             best_genome (Genome): Optimal solution calculated by the algorithm.
         """
-        # print(f'Before:\n {self.population}\n')
-        # self.population.ascendent_sort()
-        # self.best_genome = self.population.collection[0]
-        # print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        print(f'Before:\n {self.population}\n')
+        self.best()
+        print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
         mutator = Rand1MutationOperator(self.bounds, 0.2)
         mixer = ExponentialCrossoverOperator(self.minfun)
         replacer = ElitistReplacementOperator()
 
         for _ in range(iterations):
+            candidate_population = []
             for target in self.population.collection:
                 # List with genomes who will be the donors
                 mutant = mutator.apply(target, self.population)
                 # Genome modified by replacing a few random positions
-                candidate = mixer.apply(target, mutant)
-                # target is replaced by candidate from the population if candidate has less fitness than target
-                replacer.apply(self.population, target, candidate)
+                candidate_genome = mixer.apply(target, mutant)
+                candidate_population.append(candidate_genome)
+            # Targets are replaced by candidates from the population if candidate has less fitness than target
+            self.population = replacer.apply(self.population, candidate_population)
 
-        # print(f'After:\n {self.population}\n')
-
-        self.population.ascendent_sort()
-        self.best_genome = self.population.collection[0]
+        print(f'After:\n {self.population}\n')
+        self.best()
         print(f'Best Genome: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
     def best(self):
+        self.population.ascendent_sort()
+        self.best_genome = self.population.collection[0]
         return self.best_genome
 
 
 if __name__ == '__main__':
     def f(array):
-        return sum(array)
+        return fun.sphere(array)
 
 
-    mybounds = [(0, 10), (10, 20), (20, 30), (30, 40)]
+    mybounds = [(-100, 100), (-200, 200), (-300, 300), (-400, 400)]
 
-    myEA = EA(f, mybounds, 10)
+    myEA = EA(f, mybounds, 30)
 
-    myEA.run(10)
+    myEA.run(1000)
 
     myEA.best()

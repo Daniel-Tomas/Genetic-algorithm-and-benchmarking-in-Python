@@ -37,7 +37,7 @@ class CrossoverOperator(ABC):
 
 class ReplacementOperator(ABC):
     @abstractmethod
-    def apply(self, population, target, candidate):
+    def apply(self, population, candidate_population):
         """
         Args:
             population (Population): Function used to calculate the fitness of a genome.

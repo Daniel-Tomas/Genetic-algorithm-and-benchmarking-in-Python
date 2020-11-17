@@ -3,6 +3,7 @@ import random
 import numpy as np
 
 from group14.Genome import Genome
+from group14.Population import Population
 
 
 class UniformSelectionOperator(AbstractClasses.SelectionOperator):
@@ -133,7 +134,7 @@ class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
     This class inherits from the abstract class 'ReplacementOperator'.
     """
 
-    def apply(self, population, target, candidate):
+    def apply(self, population, candidate_population):
         """Include in 'population' the genome with the best fitness between 'target' and 'candidate'
 
         Args:
@@ -141,5 +142,12 @@ class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
             target (Genome): Genome object selected to work it.
             candidate (Genome): Candidate to have better fitness than our 'target' genome.
         """
-        if candidate.fitness < target.fitness:
-            population.replace(target, candidate)
+        res = Population(None, None, 0)
+        for i in range(len(population.collection)):
+            target = population.collection[i]
+            candidate = candidate_population[i]
+            if candidate.fitness < target.fitness:
+                res.add(candidate)
+            else:
+                res.add(target)
+        return res
