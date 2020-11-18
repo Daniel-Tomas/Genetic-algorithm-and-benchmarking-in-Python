@@ -16,14 +16,14 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
     """
 
     def apply(self, target, population):
-        """Select three random genomes of population different from each other and from the target.
+        """Select three random genomes of current_population different from each other and from the target.
 
         Args:
             target (Genome): Genome object selected to work it.
             population (Population): Object which contains a list of genomes.
 
         Returns:
-            donors (array) : Contains three different genomes obtained randomly from 'population'.
+            donors (array) : Contains three different genomes obtained randomly from 'current_population'.
         """
 
         donors = [target]
@@ -134,20 +134,16 @@ class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
     This class inherits from the abstract class 'ReplacementOperator'.
     """
 
-    def apply(self, population, candidate_population):
+    def apply(self, current_population, candidate_population):
         """Include in 'population' the genome with the best fitness between 'target' and 'candidate'
 
         Args:
-            population (Population): Object which contains a list of genomes.
+            current_population (Population): Object which contains a list of genomes.
             target (Genome): Genome object selected to work it.
             candidate (Genome): Candidate to have better fitness than our 'target' genome.
         """
-        res = Population(None, None, 0)
-        for i in range(len(population.collection)):
-            target = population.collection[i]
-            candidate = candidate_population[i]
-            if candidate.fitness < target.fitness:
-                res.add(candidate)
-            else:
-                res.add(target)
-        return res
+        result_population = Population(None, None, 0)
+        for target, candidate in zip(current_population.collection, candidate_population.collection):
+            result_population.add(candidate if candidate.fitness < target.fitness else target)
+
+        return result_population

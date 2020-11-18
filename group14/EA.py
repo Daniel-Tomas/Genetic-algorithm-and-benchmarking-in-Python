@@ -44,19 +44,21 @@ class EA(object):
         replacer = ElitistReplacementOperator()
 
         for _ in range(iterations):
-            candidate_population = []
+            candidate_population = Population(None, None, 0)
             for target in self.population.collection:
                 # List with genomes who will be the donors
                 mutant = mutator.apply(target, self.population)
                 # Genome modified by replacing a few random positions
                 candidate_genome = mixer.apply(target, mutant)
-                candidate_population.append(candidate_genome)
+
+                candidate_population.add(candidate_genome)
+
             # Targets are replaced by candidates from the population if candidate has less fitness than target
             self.population = replacer.apply(self.population, candidate_population)
 
         print(f'After:\n {self.population}\n')
         self.best()
-        print(f'Best Genome: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
     def best(self):
         self.population.ascendent_sort()
