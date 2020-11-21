@@ -135,12 +135,17 @@ class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
     """
 
     def apply(self, current_population, candidate_population):
-        """Include in 'population' the genome with the best fitness between 'target' and 'candidate'
+        """
+        Each genome of 'current_population' is compared with the genome that is in the same position within
+        'candidate_population' and the one with the best fitness of these two genomes is added to
+        'result_population'.
 
         Args:
             current_population (Population): Object which contains a list of genomes.
-            target (Genome): Genome object selected to work it.
-            candidate (Genome): Candidate to have better fitness than our 'target' genome.
+            candidate_population (list): List which contains a list of genomes.
+
+        Returns:
+            result_population (Population) : Resulting population with the best fitness in each position.
         """
         result_population = Population(None, None, 0)
         for target, candidate in zip(current_population.collection, candidate_population.collection):

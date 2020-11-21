@@ -40,8 +40,7 @@ class ReplacementOperator(ABC):
     def apply(self, population, candidate_population):
         """
         Args:
-            population (Population): Function used to calculate the fitness of a genome.
-            target (Genome): Genome class object selected.
-            candidate (Genome): Candidate to have better fitness than our 'target' genome.
+            current_population (Population): Object which contains a list of genomes.
+            candidate_population (list): List which contains a list of genomes.
         """
         ...

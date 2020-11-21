@@ -31,9 +31,6 @@ class EA(object):
 
         Args:
             iterations (int): Number of iterations to be made by the algorithm.
-
-        Returns:
-            best_genome (Genome): Optimal solution calculated by the algorithm.
         """
         print(f'Before:\n {self.population}\n')
         self.best()
@@ -61,6 +58,11 @@ class EA(object):
         print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
     def best(self):
+        """Returns the best genome
+
+        Returns:
+            best_genome (Genome): Optimal solution calculated by the algorithm.
+        """
         self.population.ascendent_sort()
         self.best_genome = self.population.collection[0]
         return self.best_genome
