@@ -32,11 +32,11 @@ class EA(object):
         Args:
             iterations (int): Number of iterations to be made by the algorithm.
         """
-        print(f'Before:\n {self.population}\n')
-        self.best()
-        print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        # print(f'Before:\n {self.population}\n')
+        # self.best()
+        # print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
-        mutator = Rand1MutationOperator(self.bounds, 0.2)
+        mutator = Rand1MutationOperator(self.population, self.bounds, 0.2)
         mixer = ExponentialCrossoverOperator(self.minfun)
         replacer = ElitistReplacementOperator()
 
@@ -44,7 +44,7 @@ class EA(object):
             candidate_population = Population(None, None, 0)
             for target in self.population.collection:
                 # List with genomes who will be the donors
-                mutant = mutator.apply(target, self.population)
+                mutant = mutator.apply(target)
                 # Genome modified by replacing a few random positions
                 candidate_genome = mixer.apply(target, mutant)
 
@@ -53,9 +53,9 @@ class EA(object):
             # Targets are replaced by candidates from the population if candidate has less fitness than target
             self.population = replacer.apply(self.population, candidate_population)
 
-        print(f'After:\n {self.population}\n')
-        self.best()
-        print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        # print(f'After:\n {self.population}\n')
+        # self.best()
+        # print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
     def best(self):
         """Returns the best genome

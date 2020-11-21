@@ -7,20 +7,24 @@ from group14.Population import Population
 
 
 class UniformSelectionOperator(AbstractClasses.SelectionOperator):
-    # TODO: Añadir comentarios a las funciones cambiadas, sobre todo a los constructores de dichas funciones.
-    # TODO: comprobar correcto funcionamiento del algoritmo y comentar clase EA ya que ahora devuelve el mejor genoma
-
     """Basic class
 
     This class inherits from the abstract class 'SelectionOperator'.
+    Attributes:
+        population (Population): Object which contains a list of genomes.
+
+    Args:
+        population_ (Population): Population to be set.
     """
 
-    def apply(self, target, population):
+    def __init__(self, population_):
+        self.population = population_
+
+    def apply(self, target):
         """Select three random genomes of current_population different from each other and from the target.
 
         Args:
             target (Genome): Genome object selected to work it.
-            population (Population): Object which contains a list of genomes.
 
         Returns:
             donors (array) : Contains three different genomes obtained randomly from 'current_population'.
@@ -29,9 +33,9 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
         donors = [target]
 
         for _ in range(3):
-            genome = random.choice(population.collection)
+            genome = random.choice(self.population.collection)
             while genome in donors:
-                genome = random.choice(population.collection)
+                genome = random.choice(self.population.collection)
             donors.append(genome)
 
         donors.remove(target)
@@ -44,32 +48,34 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
     This class inherits from the abstract class 'MutationOperator'.
 
     Attributes:
-        F (float): Will be used as an element in the mutation operation.
+        population (Population): Object which contains a list of genomes.
+        F (float): Used as a variable in the mutation operation.
         bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
                 solution.
 
     Args:
+        population_ (Population): Population to be set.
         F_ (float): Float to be set.
         bounds_ (list): Bounds to be set.
     """
 
-    def __init__(self, bounds_, F_=0.5):
+    def __init__(self, population_, bounds_, F_=0.5):
+        self.population = population_
         self.bounds = bounds_
         self.F = F_
-        self.selector = UniformSelectionOperator()
+        self.selector = UniformSelectionOperator(population_)
 
-    def apply(self, target, population):
+    def apply(self, target):
         """Generate a new genome by combining 'donors'.
 
        Args:
             target (Genome): Genome object selected to work it.
-            population (Population): Object which contains a list of genomes.
 
         Returns:
             Genome (Genome) : Returns the genome resulting from the combination of the three genomes passed as a
             parameter in the 'donors' array.
         """
-        donors = self.selector.apply(target, population)
+        donors = self.selector.apply(target)
         mutant_array = []
         for i in range(len(self.bounds)):
             min_ = self.bounds[i][0]

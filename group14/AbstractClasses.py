@@ -3,22 +3,20 @@ from abc import ABC, abstractmethod
 
 class SelectionOperator(ABC):
     @abstractmethod
-    def apply(self, target, population):
+    def apply(self, target):
         """
         Args:
             target (Genome): Genome class object selected.
-            population (Population): Object which contains a list of genomes.
         """
         ...
 
 
 class MutationOperator(ABC):
     @abstractmethod
-    def apply(self, target, population):
+    def apply(self, target):
         """
          Args:
             target (Genome): Genome class object selected.
-            population (Population): Object which contains a list of genomes.
         """
         ...
 
