@@ -26,7 +26,6 @@ class CrossoverOperator(ABC):
     def apply(self, target, mutant):
         """
         Args:
-            minfun (function): Function used to calculate the fitness of a genome.
             target (Genome): Genome class object selected.
             mutant (Genome): The genome which we are going to combine with 'target'.
         """
@@ -35,7 +34,7 @@ class CrossoverOperator(ABC):
 
 class ReplacementOperator(ABC):
     @abstractmethod
-    def apply(self, population, candidate_population):
+    def apply(self, current_population, candidate_population):
         """
         Args:
             current_population (Population): Object which contains a list of genomes.

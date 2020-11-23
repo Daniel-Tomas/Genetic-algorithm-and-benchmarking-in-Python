@@ -15,8 +15,8 @@ class EA(object):
 
 
     Args:
-        minfun (function): The function to be set.
-        bounds (list): List of values to be set.
+        minfun_ (function): The function to be set.
+        bounds_ (list): List of values to be set.
         p_size (int): Maximum size of our population.
     """
 

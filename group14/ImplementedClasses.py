@@ -10,6 +10,7 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
     """Basic class
 
     This class inherits from the abstract class 'SelectionOperator'.
+
     Attributes:
         population (Population): Object which contains a list of genomes.
 
@@ -49,14 +50,15 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
 
     Attributes:
         population (Population): Object which contains a list of genomes.
-        F (float): Used as a variable in the mutation operation.
         bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
                 solution.
+        F (float): Used as a variable in the mutation operation.
+        selector (function): Function that selects three random genomes
 
     Args:
         population_ (Population): Population to be set.
+        bounds_ (list): List to be set.
         F_ (float): Float to be set.
-        bounds_ (list): Bounds to be set.
     """
 
     def __init__(self, population_, bounds_, F_=0.5):

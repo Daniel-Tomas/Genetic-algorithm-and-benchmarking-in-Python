@@ -7,7 +7,7 @@ class Population:
     Creates a collection of Genomes.
 
     Attributes:
-            Collection (list): list of genomes
+        Collection (list): list of genomes
 
     Args:
         minfun (function): Function used to calculate the fitness of a genome.
