@@ -6,7 +6,7 @@ class SelectionOperator(ABC):
     def apply(self, target):
         """
         Args:
-            target (Genome): Genome class object selected.
+            target (Genome): Genome object selected to work it.
         """
         ...
 
@@ -16,7 +16,7 @@ class MutationOperator(ABC):
     def apply(self, target):
         """
          Args:
-            target (Genome): Genome class object selected.
+            target (Genome): Genome object selected to work it.
         """
         ...
 
@@ -26,7 +26,7 @@ class CrossoverOperator(ABC):
     def apply(self, target, mutant):
         """
         Args:
-            target (Genome): Genome class object selected.
+            target (Genome): Genome class object selected to work it.
             mutant (Genome): The genome which we are going to combine with 'target'.
         """
         ...
@@ -38,6 +38,6 @@ class ReplacementOperator(ABC):
         """
         Args:
             current_population (Population): Object which contains a list of genomes.
-            candidate_population (list): List which contains a list of genomes.
+            candidate_population (list): List which contains a the candidates genomes.
         """
         ...

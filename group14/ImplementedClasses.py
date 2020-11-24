@@ -28,7 +28,7 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
             target (Genome): Genome object selected to work it.
 
         Returns:
-            donors (array) : Contains three different genomes obtained randomly from 'current_population'.
+            donors (array) : Contains three different genomes obtained randomly from the population.
         """
 
         donors = [target]
@@ -104,7 +104,7 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
 
     Args:
         minfun (function): Function to be set.
-        CR (float): float tu be set.
+        CR (float): float to be set.
     """
 
     def __init__(self, minfun, CR=0.1):
@@ -144,7 +144,7 @@ class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
 
     def apply(self, current_population, candidate_population):
         """
-        Each genome of 'current_population' is compared with the genome that is in the same position within
+        Each genome of 'current_population' is compared with the genome which is in the same position than
         'candidate_population' and the one with the best fitness of these two genomes is added to
         'result_population'.
 
