@@ -1,5 +1,5 @@
-from group14.ImplementedClasses import *
-from group14.Population import Population
+from src.ImplementedClasses import *
+from src.Population import Population
 from benchmarks import functions as fun
 
 
@@ -58,7 +58,7 @@ class EA(object):
         # print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
     def best(self):
-        """Returns the best genome
+        """Gets the best genome
 
         Returns:
             best_genome (Genome): Optimal solution calculated by the algorithm.

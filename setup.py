@@ -6,7 +6,7 @@ with open(
     long_description = fh.read()
 
 setuptools.setup(
-    name="group14",  # Replace with your own username
+    name="src",  # Replace with your own username
     version="1.0.0",
     author="Group14",
     author_email="author@example.com",
