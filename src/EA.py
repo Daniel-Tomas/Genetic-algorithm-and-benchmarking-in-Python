@@ -1,6 +1,7 @@
 from src.ImplementedClasses import *
 from src.Population import Population
 import random
+import numpy as np
 from benchmarks import functions as fun
 
 
@@ -73,7 +74,7 @@ if __name__ == '__main__':
     def f(array):
         res = 0;
         if (sum(array) > horas_estudio):
-            return 0;
+            return -np.inf;
         for i in range(len(array)):
             nota = (array[i] * punto_hora[i])
             if (random.random() <= posibilidad_revision[i]):
@@ -84,18 +85,20 @@ if __name__ == '__main__':
         return res / sum(creditos);
 
 
-    notas_minimas = [3, 4, 5, 2, 1]
+    notas_minimas = [3, 4, 5, 2, 1] # NO SE TIENE EN CUENTA
     punto_hora = [1, 2, 1, 2, 3]
     creditos = [3, 6, 1, 4, 2]
     posibilidad_revision = [0.4, 0.3, 0.2, 0.5, 0.6]
     nota_revision = [0.5, 0.1, 0.3, 0.4, 0.2]
     horas_estudio = 31
-    asignaturas = len(creditos)
-    mybounds = []
-    for i in range(asignaturas):
-        mybounds.append((notas_minimas[i] / punto_hora[i], 10 / punto_hora[i]))
+    mybounds = [(notas_minimas[i] / punto_hora[i], 10 / punto_hora[i]) for i in range(len(creditos))]
 
-    myEA = EA(f, mybounds, 30)
+    # asignaturas = len(creditos)
+    # mybounds = []
+    # for i in range(asignaturas):
+    #     mybounds.append((notas_minimas[i] / punto_hora[i], 10 / punto_hora[i]))
+
+    myEA = EA(f, mybounds, 100)
 
     myEA.run(1000)
 
