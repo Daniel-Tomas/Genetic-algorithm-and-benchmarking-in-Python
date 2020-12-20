@@ -4,7 +4,9 @@ import random
 import numpy as np
 from benchmarks import functions as fun
 
-
+#todo imprimir dos decimales
+#todo hacer memoria
+#todo pasar a ingles las variables
 class EA(object):
     """This class is the entry point to the execution of the algorithm.
 
@@ -85,20 +87,15 @@ if __name__ == '__main__':
         return res / sum(creditos);
 
 
-    notas_minimas = [3, 4, 5, 2, 1] # NO SE TIENE EN CUENTA
+    notas_minimas = [3, 4, 5, 2, 1]
     punto_hora = [1, 2, 1, 2, 3]
     creditos = [3, 6, 1, 4, 2]
     posibilidad_revision = [0.4, 0.3, 0.2, 0.5, 0.6]
     nota_revision = [0.5, 0.1, 0.3, 0.4, 0.2]
-    horas_estudio = 31
+    horas_estudio = 15
     mybounds = [(notas_minimas[i] / punto_hora[i], 10 / punto_hora[i]) for i in range(len(creditos))]
 
-    # asignaturas = len(creditos)
-    # mybounds = []
-    # for i in range(asignaturas):
-    #     mybounds.append((notas_minimas[i] / punto_hora[i], 10 / punto_hora[i]))
-
-    myEA = EA(f, mybounds, 100)
+    myEA = EA(f, mybounds, 20)
 
     myEA.run(1000)
 
