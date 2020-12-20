@@ -25,7 +25,7 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
         """Select three random genomes of current_population different from each other and from the target.
 
         Args:
-            target (Genome): Genome object selected to work with.
+            target (Genome): Genome object selected to work it.
 
         Returns:
             donors (array) : Contains three different genomes obtained randomly from the population.
@@ -37,7 +37,6 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
             genome = random.choice(self.population.collection)
             while genome in donors:
                 genome = random.choice(self.population.collection)
-
             donors.append(genome)
 
         donors.remove(target)
@@ -54,7 +53,7 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
         bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
                 solution.
         F (float): Used as a variable in the mutation operation.
-        selector (UniformSelectionOperator): Selects three random genomes.
+        selector (function): Function that selects three random genomes
 
     Args:
         population_ (Population): Population to be set.
@@ -72,7 +71,7 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
         """Generate a new genome by combining 'donors'.
 
        Args:
-            target (Genome): Genome object selected to work with.
+            target (Genome): Genome object selected to work it.
 
         Returns:
             Genome (Genome) : Returns the genome resulting from the combination of the three genomes passed as a
@@ -83,18 +82,14 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
         for i in range(len(self.bounds)):
             min_ = self.bounds[i][0]
             max_ = self.bounds[i][1]
-
             subtract_res = donors[1].array[i] - donors[2].array[i]
             multiplication_res = self.F * subtract_res
             addition_res = donors[0].array[i] + multiplication_res
-
             if addition_res < min_:
                 addition_res = min_
             elif addition_res > max_:
                 addition_res = max_
-
             mutant_array = np.append(mutant_array, addition_res)
-
         return Genome(array=mutant_array, fitness=0)
 
 
@@ -120,7 +115,7 @@ class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
         """Returns a new candidate by mixing 'target' and 'mutant'.
 
         Args:
-            target (Genome): Genome object selected to work with.
+            target (Genome): Genome object selected to work it.
             mutant (Genome): The genome which we are going to combine with 'target'.
 
         Returns:
@@ -162,6 +157,6 @@ class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
         """
         result_population = Population(None, None, 0)
         for target, candidate in zip(current_population.collection, candidate_population.collection):
-            result_population.add(candidate if candidate.fitness < target.fitness else target)
+            result_population.add(candidate if candidate.fitness > target.fitness else target)
 
         return result_population

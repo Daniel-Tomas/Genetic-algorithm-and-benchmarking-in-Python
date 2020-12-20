@@ -7,8 +7,8 @@ class Genome:
     Creates a pair, formed by a list and its fitness, in that order.
 
     Attributes:
-        array (list): set of values of a function.
-        fitness (int): solution´s quality.
+        array (list): set of values of a function
+        fitness (int): solution´s quality
 
     Args:
         bounds (list): Contains the minimum and maximum values that each variable can take from a candidate

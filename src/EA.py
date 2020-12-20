@@ -1,5 +1,6 @@
 from src.ImplementedClasses import *
 from src.Population import Population
+import random
 from benchmarks import functions as fun
 
 
@@ -32,9 +33,9 @@ class EA(object):
         Args:
             iterations (int): Number of iterations to be made by the algorithm.
         """
-        # print(f'Before:\n {self.population}\n')
-        # self.best()
-        # print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        print(f'Before:\n {self.population}\n')
+        self.best()
+        print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
         mutator = Rand1MutationOperator(self.population, self.bounds, 0.2)
         mixer = ExponentialCrossoverOperator(self.minfun)
@@ -53,27 +54,46 @@ class EA(object):
             # Targets are replaced by candidates from the population if candidate has less fitness than target
             self.population = replacer.apply(self.population, candidate_population)
 
-        # print(f'After:\n {self.population}\n')
-        # self.best()
-        # print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        print(f'After:\n {self.population}\n')
+        self.best()
+        print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
     def best(self):
-        """Gets the best genome
+        """Returns the best genome
 
         Returns:
             best_genome (Genome): Optimal solution calculated by the algorithm.
         """
-        self.population.ascendent_sort()
+        self.population.descendent_sort()
         self.best_genome = self.population.collection[0]
         return self.best_genome
 
 
 if __name__ == '__main__':
     def f(array):
-        return fun.sphere(array)
+        res = 0;
+        if (sum(array) > horas_estudio):
+            return 0;
+        for i in range(len(array)):
+            nota = (array[i] * punto_hora[i])
+            if (random.random() <= posibilidad_revision[i]):
+                nota += nota_revision[i];
+            if (nota > 10):
+                nota = 10
+            res += nota * creditos[i]
+        return res / sum(creditos);
 
 
-    mybounds = [(-100, 100), (-200, 200), (-300, 300), (-400, 400)]
+    notas_minimas = [3, 4, 5, 2, 1]
+    punto_hora = [1, 2, 1, 2, 3]
+    creditos = [3, 6, 1, 4, 2]
+    posibilidad_revision = [0.4, 0.3, 0.2, 0.5, 0.6]
+    nota_revision = [0.5, 0.1, 0.3, 0.4, 0.2]
+    horas_estudio = 31
+    asignaturas = len(creditos)
+    mybounds = []
+    for i in range(asignaturas):
+        mybounds.append((notas_minimas[i] / punto_hora[i], 10 / punto_hora[i]))
 
     myEA = EA(f, mybounds, 30)
 

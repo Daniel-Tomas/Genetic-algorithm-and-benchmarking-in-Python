@@ -7,7 +7,7 @@ class Population:
     Creates a collection of Genomes.
 
     Attributes:
-        collection (list): list of genomes.
+        Collection (list): list of genomes
 
     Args:
         minfun (function): Function used to calculate the fitness of a genome.
@@ -16,9 +16,9 @@ class Population:
         p_size (int): Maximum size of our population.
     """
 
-    def __init__(self, minfun, bounds, p_size):
+    def __init__(self, minfun, bounds, psize):
         self.collection = []
-        for _ in range(p_size):
+        for _ in range(psize):
             self.add(Genome(bounds=bounds, minfun=minfun))
 
     def __repr__(self):
@@ -47,7 +47,7 @@ class Population:
         self.collection.sort(key=lambda x: x.fitness, reverse=True)
 
     def add(self, genome):
-        """Add an element of type Genome to the end of 'self'.
+        """Add an element of type Genome to the end of 'self'
         Args:
             genome(array): Genome class object to be added to the end of 'self'.
         """
@@ -60,12 +60,13 @@ class Population:
         Args:
             genome(array): Genome class object that will be removed from 'self'.
         """
-
+        # for elem in self.collection:
+        #     if elem == genome:
         self.collection.remove(genome)
 
     def replace(self, genomerm, genomerp):
         """Replace genomerm with genomerp in the 'self' array.
-            Excepcion en caso de que no esté el elemento a elminar.
+        Excepcion en caso de que no esté el elemento a elminar
 
         Args:
             genomerm(array): Genome class object that will be removed from 'self'.
@@ -73,3 +74,28 @@ class Population:
         """
         self.remove(genomerm)
         self.add(genomerp)
+
+
+# def f(sol):
+#     return sum(sol)
+#
+#
+# prueba = Population(f, [(0, 1), (0, 1)], 3)
+# print(prueba)
+#
+# # genome1 = Genome(array=[1, 33, 4],fitness= 3)
+# # genome2 = Genome(array=[1, 33, 5], fitness=4)
+# # genome3 = Genome(array=[2, 33, 4], fitness=1)
+#
+# genome4 = Genome(array=[2, 33, 4], fitness=-1)
+#
+# prueba.ascendent_sort()
+# print(prueba)
+#
+# prueba.add(genome4)
+# print(prueba)
+#
+# prueba.remove(genome4)
+# print(prueba)
+#
+# print(len(prueba.collection[0].array))
