@@ -4,9 +4,8 @@ import random
 import numpy as np
 from benchmarks import functions as fun
 
-#todo imprimir dos decimales
+#todo imprimir dos decimales (Ejemplo en fitness resultante)
 #todo hacer memoria
-#todo pasar a ingles las variables
 class EA(object):
     """This class is the entry point to the execution of the algorithm.
 
@@ -59,7 +58,7 @@ class EA(object):
 
         print(f'After:\n {self.population}\n')
         self.best()
-        print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        print(f'Best Genome after: {self.best_genome.array}, fitness={"{0:.2f}".format(self.best_genome.fitness)} ')
 
     def best(self):
         """Returns the best genome
@@ -75,25 +74,25 @@ class EA(object):
 if __name__ == '__main__':
     def f(array):
         res = 0;
-        if (sum(array) > horas_estudio):
+        if (sum(array) > hours_study):
             return -np.inf;
         for i in range(len(array)):
-            nota = (array[i] * punto_hora[i])
-            if (random.random() <= posibilidad_revision[i]):
-                nota += nota_revision[i];
-            if (nota > 10):
-                nota = 10
-            res += nota * creditos[i]
-        return res / sum(creditos);
+            mark = (array[i] * point_hour[i])
+            if (random.random() <= possibility_revision[i]):
+                mark += revision_mark[i];
+            if (mark > 10):
+                mark = 10
+            res += mark * credits[i]
+        return res / sum(credits);
 
 
-    notas_minimas = [3, 4, 5, 2, 1]
-    punto_hora = [1, 2, 1, 2, 3]
-    creditos = [3, 6, 1, 4, 2]
-    posibilidad_revision = [0.4, 0.3, 0.2, 0.5, 0.6]
-    nota_revision = [0.5, 0.1, 0.3, 0.4, 0.2]
-    horas_estudio = 15
-    mybounds = [(notas_minimas[i] / punto_hora[i], 10 / punto_hora[i]) for i in range(len(creditos))]
+    min_marks = [3, 4, 5, 2, 1]
+    point_hour = [1, 2, 1, 2, 3]
+    credits = [3, 6, 1, 4, 2]
+    possibility_revision = [0.4, 0.3, 0.2, 0.5, 0.6]
+    revision_mark = [0.5, 0.1, 0.3, 0.4, 0.2]
+    hours_study = 15
+    mybounds = [(min_marks[i] / point_hour[i], 10 / point_hour[i]) for i in range(len(credits))]
 
     myEA = EA(f, mybounds, 20)
 
