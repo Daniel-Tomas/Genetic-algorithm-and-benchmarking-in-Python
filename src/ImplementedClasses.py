@@ -120,19 +120,28 @@ class BinomialCrossoverOperator(AbstractClasses.CrossoverOperator):
         Returns:
             Genome (Genome) : Is the genome resulting from the combination between 'target' and 'mutant'.
         """
-        size = len(target.array)
-        j = random.randint(0, size - 1)
-        candidate = Genome(array=target.array)
+        dimensions = len(target.array)
+        candidate_array = []
+        I_rand = random.randint(0, dimensions - 1)
 
-        candidate.array[j] = mutant.array[j]
-        j = (j + 1) % size
-        i = 1
-        while i < size and random.random() < self.CR:
-            candidate.array[j] = mutant.array[j]
-            j = (j + 1) % size
-            i = i + 1
+        for j in range(dimensions):
+            candidate_array.append(mutant.array[j] if random.random() <= self.CR or j == I_rand else target.array[j])
 
-        return Genome(array=candidate.array, fitness=self.minfun(candidate.array))
+        return Genome(array=candidate_array, fitness=self.minfun(candidate_array))
+
+        # dimensions = len(target.array)
+        # j = random.randint(0, dimensions - 1)
+        # candidate = Genome(array=target.array)
+        #
+        # candidate.array[j] = mutant.array[j]
+        # j = (j + 1) % dimensions
+        # i = 1
+        # while i < dimensions and random.random() < self.CR:
+        #     candidate.array[j] = mutant.array[j]
+        #     j = (j + 1) % dimensions
+        #     i = i + 1
+        #
+        # return Genome(array=candidate.array, fitness=self.minfun(candidate.array))
 
 
 class ElitistReplacementOperator(AbstractClasses.ReplacementOperator):
