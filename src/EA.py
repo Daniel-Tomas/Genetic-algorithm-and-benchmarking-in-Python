@@ -1,11 +1,13 @@
 from src.ImplementedClasses import *
 from src.Population import Population
+from src.Data import *
 import random
 import numpy as np
-from benchmarks import functions as fun
 
-#todo imprimir dos decimales (Ejemplo en fitness resultante)
-#todo hacer memoria
+
+
+# todo imprimir dos decimales (Ejemplo en fitness resultante)
+# todo hacer memoria
 class EA(object):
     """This class is the entry point to the execution of the algorithm.
 
@@ -73,26 +75,22 @@ class EA(object):
 
 if __name__ == '__main__':
     def f(array):
+        return our_fitness(array)
+
+    def our_fitness(array):
         res = 0;
-        if (sum(array) > hours_study):
+        if (sum(array) > study_hours):
             return -np.inf;
         for i in range(len(array)):
-            mark = (array[i] * point_hour[i])
-            if (random.random() <= possibility_revision[i]):
+            mark = (array[i] * point_per_hour[i])
+            if (random.random() <= revision_probability[i]):
                 mark += revision_mark[i];
             if (mark > 10):
                 mark = 10
             res += mark * credits[i]
         return res / sum(credits);
 
-
-    min_marks = [3, 4, 5, 2, 1]
-    point_hour = [1, 2, 1, 2, 3]
-    credits = [3, 6, 1, 4, 2]
-    possibility_revision = [0.4, 0.3, 0.2, 0.5, 0.6]
-    revision_mark = [0.5, 0.1, 0.3, 0.4, 0.2]
-    hours_study = 15
-    mybounds = [(min_marks[i] / point_hour[i], 10 / point_hour[i]) for i in range(len(credits))]
+    mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
 
     myEA = EA(f, mybounds, 20)
 
