@@ -81,7 +81,6 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
         """
         donors = self.selector.apply(target)
         mutant_array = donors[0].array + self.F * (donors[1].array - donors[2].array)
-
         for i in range(len(self.bounds)):
             min_ = self.bounds[i][0]
             max_ = self.bounds[i][1]
@@ -90,7 +89,7 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
             elif mutant_array[i] > max_:
                 mutant_array[i] = max_
 
-        return Genome(array=mutant_array, fitness=0)
+        return Genome(array=mutant_array, fitness=None)
 
 
 class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
