@@ -22,24 +22,25 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
         self.population = population_
 
     def apply(self, target):
-        """Select three random genomes of current_population different from each other and from the target.
+        """Select two random genomes from current_population different between the other one, the target and
+        the best.
 
         Args:
             target (Genome): Genome object selected to work with.
 
         Returns:
-            donors (array) : Contains three different genomes obtained randomly from the population.
+            donors (array) : Contains the best genome and two different genomes obtained randomly from the population.
         """
 
         donors = [target]
+        best = self.population.collection[0]
+        donors.append(best)
 
-        for _ in range(3):
+        for _ in range(2):
             genome = random.choice(self.population.collection)
             while genome in donors:
                 genome = random.choice(self.population.collection)
-
             donors.append(genome)
-
         donors.remove(target)
         return donors
 
@@ -79,21 +80,15 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
             parameter in the 'donors' array.
         """
         donors = self.selector.apply(target)
-        mutant_array = []
+        mutant_array = donors[0].array + self.F * (donors[1].array - donors[2].array)
+
         for i in range(len(self.bounds)):
             min_ = self.bounds[i][0]
             max_ = self.bounds[i][1]
-
-            subtract_res = donors[1].array[i] - donors[2].array[i]
-            multiplication_res = self.F * subtract_res
-            addition_res = donors[0].array[i] + multiplication_res
-
-            if addition_res < min_:
-                addition_res = min_
-            elif addition_res > max_:
-                addition_res = max_
-
-            mutant_array = np.append(mutant_array, addition_res)
+            if mutant_array[i] < min_:
+                mutant_array[i] = min_
+            elif mutant_array[i] > max_:
+                mutant_array[i] = max_
 
         return Genome(array=mutant_array, fitness=0)
 
