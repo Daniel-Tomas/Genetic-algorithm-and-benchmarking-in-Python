@@ -32,8 +32,6 @@ class Genome:
             self.array = np.copy(array)
             if fitness:
                 self.fitness = fitness
-            else:
-                self.fitness = 0
 
     # def __eq__(self, other):
     #     """Compare if 'other' contains the same values as 'self'

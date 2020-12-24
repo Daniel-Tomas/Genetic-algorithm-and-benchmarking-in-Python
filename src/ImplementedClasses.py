@@ -45,7 +45,7 @@ class UniformSelectionOperator(AbstractClasses.SelectionOperator):
         return donors
 
 
-class Rand1MutationOperator(AbstractClasses.MutationOperator):
+class Best1MutationOperator(AbstractClasses.MutationOperator):
     """Basic class
 
     This class inherits from the abstract class 'MutationOperator'.
@@ -92,7 +92,7 @@ class Rand1MutationOperator(AbstractClasses.MutationOperator):
         return Genome(array=mutant_array, fitness=None)
 
 
-class ExponentialCrossoverOperator(AbstractClasses.CrossoverOperator):
+class BinomialCrossoverOperator(AbstractClasses.CrossoverOperator):
     """Basic class
 
     This class inherits from the abstract class 'CrossoverOperator'.

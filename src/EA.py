@@ -36,8 +36,8 @@ class EA(object):
         self.best()
         print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
-        mutator = Rand1MutationOperator(self.population, self.bounds, 0.2)
-        mixer = ExponentialCrossoverOperator(self.minfun)
+        mutator = Best1MutationOperator(self.population, self.bounds, 0.2)
+        mixer = BinomialCrossoverOperator(self.minfun)
         replacer = ElitistReplacementOperator()
 
         for _ in range(iterations):
@@ -78,6 +78,6 @@ if __name__ == '__main__':
 
     myEA = EA(f, mybounds, 50)
 
-    myEA.run(1000)
+    myEA.run(2000)
 
     myEA.best()
