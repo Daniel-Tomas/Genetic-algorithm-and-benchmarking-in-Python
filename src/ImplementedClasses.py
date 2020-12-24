@@ -55,7 +55,7 @@ class Best1MutationOperator(AbstractClasses.MutationOperator):
         bounds (list): Contains the minimum and maximum values that each variable can take from a candidate
                 solution.
         F (float): Used as a variable in the mutation operation.
-        selector (UniformSelectionOperator): Selects three random genomes.
+        selector (UniformSelectionOperator): Selects genomes with which mutation operator will work.
 
     Args:
         population_ (Population): Population to be set.
@@ -89,7 +89,7 @@ class Best1MutationOperator(AbstractClasses.MutationOperator):
             elif mutant_array[i] > max_:
                 mutant_array[i] = max_
 
-        return Genome(array=mutant_array, fitness=None)
+        return Genome(array=mutant_array)
 
 
 class BinomialCrossoverOperator(AbstractClasses.CrossoverOperator):
