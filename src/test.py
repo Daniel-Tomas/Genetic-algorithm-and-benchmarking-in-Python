@@ -3,6 +3,7 @@ from benchmarks.functions import *
 import statistics as st
 import pprint
 import sys
+import matplotlib.pyplot as plt
 
 benchmark = [sphere, ackley, rosenbrock, rastrigin, griewank, schwefel_2_21,
              schwefel_2_22, schwefel_1_2, extended_f_10, bohachevsky, schaffer]
@@ -73,3 +74,15 @@ def print_data_analitics_DE():
 
 
 print_data_analitics_DE()
+data = []
+# for func in results_basic_DE:
+#    data.append(results_basic_DE.get(func))
+# fig1, ax1 = plt.subplots()
+# ax1.set_title('Every function together')
+# ax1.boxplot(data)
+# plt.show()
+for func in results_basic_DE:
+    fig1, ax1 = plt.subplots()
+    ax1.set_title(func)
+    ax1.boxplot(results_basic_DE.get(func))
+    plt.show()
