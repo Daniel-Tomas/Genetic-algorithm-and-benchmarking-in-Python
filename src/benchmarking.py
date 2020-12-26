@@ -7,6 +7,7 @@ from scipy.stats import kruskal
 from scipy.stats import friedmanchisquare
 import pandas as pd
 import scikit_posthocs as sp
+import statistics as st
 
 
 class Logger():
@@ -109,3 +110,40 @@ data = pd.DataFrame({"algs": ["DE"] * len(results_avg["DE"]) +
                              results_avg["SADE"]})
 
 sp.posthoc_wilcoxon(data, val_col='vals', group_col='algs', p_adjust='holm')
+
+# Data analitics
+f = open('data_analitics.out', 'w')
+data_analitics_DE = {}
+for f in results_basic_DE:
+    analitics = {}
+    values = results_basic_DE.get(f)
+    values.sort()
+    mean = st.mean(values)
+    analitics['mean'] = mean
+    median = st.median(values)
+    analitics['median'] = median
+    min = values[0]
+    analitics['min'] = min
+    max = values[-1]
+    analitics['max'] = max
+    desv_est = st.stdev(values)
+    analitics['desv_est'] = desv_est
+    data_analitics_DE[f] = analitics
+data_analitics_SADE = {}
+for f in results_basic_DE:
+    analitics = {}
+    values = results_SADE.get(f)
+    values.sort()
+    mean = st.mean(values)
+    analitics['mean'] = mean
+    median = st.median(values)
+    analitics['median'] = median
+    min = values[0]
+    analitics['min'] = min
+    max = values[-1]
+    analitics['max'] = max
+    desv_est = st.stdev(values)
+    analitics['desv_est'] = desv_est
+    data_analitics_DE[f] = analitics
+pp.pprint(data_analitics_DE)
+pp.pprint(data_analitics_SADE)
