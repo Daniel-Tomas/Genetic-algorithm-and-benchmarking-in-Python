@@ -32,9 +32,9 @@ class EA(object):
         Args:
             iterations (int): Number of iterations to be made by the algorithm.
         """
-        print(f'Before:\n {self.population}\n')
-        self.best()
-        print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        # print(f'Before:\n {self.population}\n')
+        # self.best()
+        # print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
         mutator = Best1MutationOperator(self.population, self.bounds, 0.2)
         mixer = BinomialCrossoverOperator(self.minfun)
@@ -54,9 +54,9 @@ class EA(object):
             # Targets are replaced by candidates from the population if candidate has less fitness than target
             self.population = replacer.apply(self.population, candidate_population)
 
-        print(f'After:\n {self.population}\n')
-        self.best()
-        print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        # print(f'After:\n {self.population}\n')
+        # self.best()
+        # print(f'Best Genome after: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
     def best(self):
         """Gets the best genome
