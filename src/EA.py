@@ -79,17 +79,17 @@ if __name__ == '__main__':
 
 
     def our_fitness(array):
-        res = 0;
+        res = 0
         if (sum(array) > study_hours):
-            return -np.inf;
+            return -np.inf
         for i in range(len(array)):
             mark = (array[i] * point_per_hour[i])
             if (random.random() <= revision_probability[i]):
-                mark += revision_mark[i];
+                mark += revision_mark[i]
             if (mark > 10):
                 mark = 10
             res += mark * credits[i]
-        return res / sum(credits);
+        return res / sum(credits)
 
 
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
