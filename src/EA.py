@@ -3,7 +3,7 @@ from src.Population import Population
 from src.Data import *
 import random
 import numpy as np
-
+import matplotlib.pyplot as plt
 
 
 # todo imprimir dos decimales (Ejemplo en fitness resultante)
@@ -37,9 +37,9 @@ class EA(object):
         Args:
             iterations (int): Number of iterations to be made by the algorithm.
         """
-        print(f'Before:\n {self.population}\n')
-        self.best()
-        print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
+        # print(f'Before:\n {self.population}\n')
+        # self.best()
+        # print(f'Best Genome before: {self.best_genome.array}, fitness={self.best_genome.fitness} ')
 
         mutator = Rand1MutationOperator(self.population, self.bounds, 0.2)
         mixer = ExponentialCrossoverOperator(self.minfun)
@@ -58,9 +58,9 @@ class EA(object):
             # Targets are replaced by candidates from the population if candidate has less fitness than target
             self.population = replacer.apply(self.population, candidate_population)
 
-        print(f'After:\n {self.population}\n')
-        self.best()
-        print(f'Best Genome after: {self.best_genome.array}, fitness={"{0:.2f}".format(self.best_genome.fitness)} ')
+        # print(f'After:\n {self.population}\n')
+        # self.best()
+        # print(f'Best Genome after: {self.best_genome.array}, fitness={"{0:.2f}".format(self.best_genome.fitness)} ')
 
     def best(self):
         """Returns the best genome
@@ -77,6 +77,7 @@ if __name__ == '__main__':
     def f(array):
         return our_fitness(array)
 
+
     def our_fitness(array):
         res = 0;
         if (sum(array) > study_hours):
@@ -90,10 +91,27 @@ if __name__ == '__main__':
             res += mark * credits[i]
         return res / sum(credits);
 
+
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
 
-    myEA = EA(f, mybounds, 20)
-
-    myEA.run(1000)
-
-    myEA.best()
+    best_fitness = []
+    values_myEA = []
+    for i in range(box_plots):
+        values = []
+        myEA = EA(f, mybounds, 30)
+        myEA.run(500)
+        best = myEA.best()
+        best_fitness.append(best.fitness)
+        for i in myEA.population.collection:
+            values.append(i.fitness)
+        values_myEA.append(values)
+    # meanpointprops = dict(marker='x', markeredgecolor='blue',
+    #                      markerfacecolor='blue')
+    fig1, ax1 = plt.subplots()
+    ax1.set_title("Best fitness of each repetition")
+    ax1.boxplot(best_fitness, showmeans=True, meanline=True)
+    plt.show()
+    fig2, ax2 = plt.subplots()
+    ax2.set_title("Fitness of each repetition")
+    ax2.boxplot(values_myEA, showmeans=True, meanline=True)
+    plt.show()
