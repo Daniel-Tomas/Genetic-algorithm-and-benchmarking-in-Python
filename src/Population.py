@@ -31,9 +31,9 @@ class Population:
         res = '{ '
         for index, elem in enumerate(self.collection):
             if index == len(self.collection) - 1:
-                res += f'[ {elem.array}, fitness={elem.fitness} ] }}'
+                res += f'{elem} }}'
             else:
-                res += f'[ {elem.array}, fitness={elem.fitness} ], '
+                res += f'{elem}, '
         return res
 
     def ascendent_sort(self):

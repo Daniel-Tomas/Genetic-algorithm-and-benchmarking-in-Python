@@ -35,6 +35,16 @@ class Genome:
             else:
                 self.fitness = 0
 
+    def __repr__(self):
+        """
+        Casts the Genome object in String format.
+
+        Returns:
+             str: The Genome in string format.
+        """
+        with np.printoptions(precision=3):
+            return f'[ {self.array}, fitness={self.fitness:.3f} ]'
+
     # def __eq__(self, other):
     #     """Compare if 'other' contains the same values as 'self'
     #
