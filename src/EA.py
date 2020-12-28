@@ -70,7 +70,7 @@ class EA(object):
         """
         self.population.descendent_sort()
         self.best_genome = self.population.collection[0]
-        return self.best_genome
+        return f'Best Genome: {self.best_genome}'
 
 
 if __name__ == '__main__':
@@ -94,24 +94,33 @@ if __name__ == '__main__':
 
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
 
-    best_fitness = []
-    values_myEA = []
-    for i in range(box_plots):
-        values = []
-        myEA = EA(f, mybounds, 30)
-        myEA.run(500)
-        best = myEA.best()
-        best_fitness.append(best.fitness)
-        for i in myEA.population.collection:
-            values.append(i.fitness)
-        values_myEA.append(values)
-    # meanpointprops = dict(marker='x', markeredgecolor='blue',
-    #                      markerfacecolor='blue')
-    fig1, ax1 = plt.subplots()
-    ax1.set_title("Best fitness of each repetition")
-    ax1.boxplot(best_fitness, showmeans=True, meanline=True)
-    plt.show()
-    fig2, ax2 = plt.subplots()
-    ax2.set_title("Fitness of each repetition")
-    ax2.boxplot(values_myEA, showmeans=True, meanline=True)
-    plt.show()
+    myEA = EA(f, mybounds, 50)
+
+    myEA.run(1000)
+
+    print(myEA.best())
+    # print(myEA.population)
+
+    # mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
+    #
+    # best_fitness = []
+    # values_myEA = []
+    # for i in range(box_plots):
+    #     values = []
+    #     myEA = EA(f, mybounds, 30)
+    #     myEA.run(500)
+    #     best = myEA.best()
+    #     best_fitness.append(best.fitness)
+    #     for i in myEA.population.collection:
+    #         values.append(i.fitness)
+    #     values_myEA.append(values)
+    # # meanpointprops = dict(marker='x', markeredgecolor='blue',
+    # #                      markerfacecolor='blue')
+    # fig1, ax1 = plt.subplots()
+    # ax1.set_title("Best fitness of each repetition")
+    # ax1.boxplot(best_fitness, showmeans=True, meanline=True)
+    # plt.show()
+    # fig2, ax2 = plt.subplots()
+    # ax2.set_title("Fitness of each repetition")
+    # ax2.boxplot(values_myEA, showmeans=True, meanline=True)
+    # plt.show()
