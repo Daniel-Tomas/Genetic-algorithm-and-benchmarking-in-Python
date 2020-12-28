@@ -1,9 +1,8 @@
 from src.ImplementedClasses import *
 from src.Population import Population
 from src.Data import *
-import random
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 # todo imprimir dos decimales (Ejemplo en fitness resultante)
@@ -79,48 +78,40 @@ if __name__ == '__main__':
 
 
     def our_fitness(array):
-        res = 0;
-        if (sum(array) > study_hours):
-            return -np.inf;
+        res = 0
         for i in range(len(array)):
             mark = (array[i] * point_per_hour[i])
-            if (random.random() <= revision_probability[i]):
-                mark += revision_mark[i];
+            if (student_luck <= revision_probability[i]):
+                mark += revision_mark[i]
             if (mark > 10):
                 mark = 10
             res += mark * credits[i]
-        return res / sum(credits);
+        nota = res / sum(credits)
+        if (sum(array) > study_hours):
+            return -(nota * (sum(array) - study_hours)) ** 2
+        return nota
 
 
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
-
-    myEA = EA(f, mybounds, 50)
-
-    myEA.run(1000)
-
-    print(myEA.best())
-    # print(myEA.population)
-
-    # mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
-    #
-    # best_fitness = []
-    # values_myEA = []
-    # for i in range(box_plots):
-    #     values = []
-    #     myEA = EA(f, mybounds, 30)
-    #     myEA.run(500)
-    #     best = myEA.best()
-    #     best_fitness.append(best.fitness)
-    #     for i in myEA.population.collection:
-    #         values.append(i.fitness)
-    #     values_myEA.append(values)
-    # # meanpointprops = dict(marker='x', markeredgecolor='blue',
-    # #                      markerfacecolor='blue')
-    # fig1, ax1 = plt.subplots()
-    # ax1.set_title("Best fitness of each repetition")
-    # ax1.boxplot(best_fitness, showmeans=True, meanline=True)
-    # plt.show()
-    # fig2, ax2 = plt.subplots()
-    # ax2.set_title("Fitness of each repetition")
-    # ax2.boxplot(values_myEA, showmeans=True, meanline=True)
-    # plt.show()
+    best_fitness = []
+    worst_fitness = []
+    values_myEA = []
+    for i in range(reps):
+        values = []
+        myEA = EA(f, mybounds, 30)
+        myEA.run(500)
+        print(myEA.best())
+        best_fitness.append(myEA.best_genome.fitness)
+        for i in myEA.population.collection:
+            values.append(i.fitness)
+        values_myEA.append(values)
+    # meanpointprops = dict(marker='x', markeredgecolor='blue',
+    #                      markerfacecolor='blue')
+    fig1, ax1 = plt.subplots()
+    ax1.set_title("Best fitness of each repetition")
+    ax1.boxplot(best_fitness, showmeans=True, meanline=True)
+    plt.show()
+    fig2, ax2 = plt.subplots()
+    ax2.set_title("Fitness of each repetition")
+    ax2.boxplot(values_myEA, showmeans=True, meanline=True)
+    plt.show()
