@@ -1,6 +1,7 @@
 from src.ImplementedClasses import *
 from src.Population import Population
 from src.Data import *
+from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -110,28 +111,19 @@ if __name__ == '__main__':
     fig1, ax1 = plt.subplots()
     ax1.set_title("Best fitness of each repetition")
     ax1.boxplot(best_fitness, showmeans=True, meanline=True)
-
-    #plt.plot('b', label='mean')
-    #plt.plot('r', label='median')
-    #plt.legend(loc='best')
-
-    #line_labels = ["Item A"]
-    #fig1.legend([ax1],
-                #labels = line_labels,
-                #borderaxespad=0.1,
-                #title="Legend Title")
-    #plt.subplots_adjust(right=0.85)
-
-    plt.xlabel("Samples")
-    plt.ylabel("Marks")
+    line1 = Line2D([0], [0], color='green', linewidth=3, linestyle='--')
+    line2 = Line2D([0], [0], color='red', linewidth=3, linestyle='-')
+    lines = [line1, line2]
+    labels = ['median', 'mean']
+    plt.legend(lines, labels)
+    #plt.xlabel("Samples")
+    plt.ylabel("Marks", fontsize = 14)
     plt.show()
 
     fig2, ax2 = plt.subplots()
     ax2.set_title("Fitness of each repetition")
     ax2.boxplot(values_myEA, showmeans=True, meanline=True)
-    #plt.plot('b', label='mean')
-    #plt.plot('r', label='median')
-    #plt.legend(loc='best')
-    plt.xlabel("Samples")
-    plt.ylabel("Marks")
+    plt.legend(lines, labels)
+    #plt.xlabel("Samples")
+    plt.ylabel("Marks", fontsize = 14)
     plt.show()
