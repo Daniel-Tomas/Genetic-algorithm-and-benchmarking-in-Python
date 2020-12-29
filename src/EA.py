@@ -111,11 +111,11 @@ if __name__ == '__main__':
     fig1, ax1 = plt.subplots()
     ax1.set_title("Best fitness of each repetition")
     ax1.boxplot(best_fitness, showmeans=True, meanline=True)
-    line1 = Line2D([0], [0], color='green', linewidth=3, linestyle='--')
-    line2 = Line2D([0], [0], color='red', linewidth=3, linestyle='-')
+    line1 = Line2D([0], [0], color='orange', linewidth=3, linestyle='-')
+    line2 = Line2D([0], [0], color='green', linewidth=3, linestyle='--')
     lines = [line1, line2]
-    labels = ['median', 'mean']
-    plt.legend(lines, labels)
+    labels = ['mean', 'median']
+    plt.legend(lines, labels, fontsize = 'x-large')
     #plt.xlabel("Samples")
     plt.ylabel("Marks", fontsize = 14)
     plt.show()
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     fig2, ax2 = plt.subplots()
     ax2.set_title("Fitness of each repetition")
     ax2.boxplot(values_myEA, showmeans=True, meanline=True)
-    plt.legend(lines, labels)
+    plt.legend(lines, labels, fontsize = 'x-large')
     #plt.xlabel("Samples")
     plt.ylabel("Marks", fontsize = 14)
     plt.show()
