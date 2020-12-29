@@ -39,7 +39,7 @@ def run_basic_DE(bounds, probsize, popsize, func, iters, reps):
     return results
 
 
-params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 10, 'iters': 50, 'reps': 10}
+params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 10, 'iters': 250, 'reps': 10}
 results_basic_DE = {}
 for func in benchmark:
     results_basic_DE[func.__name__] = run_basic_DE(params['bounds'], params['probsize'], params['popsize'], func,

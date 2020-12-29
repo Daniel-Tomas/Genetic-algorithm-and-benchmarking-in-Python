@@ -60,7 +60,7 @@ def run_basic_DE(bounds, probsize, popsize, func, iters, reps):
     return results
 
 
-params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 50, 'iters': 250, 'reps': 50}
+params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 250, 'reps': 5}
 
 print('\n----------------------------------------RESULTS BASIC DE-------------------------------------------')
 results_basic_DE = {}
@@ -103,14 +103,13 @@ pp.pprint(results_avg)
 # print('\n-----------------------------------------FRIEDMAN TEST-----------------------------------')
 # friedmanchisquare(results_avg["DE"], results_avg["SADE"])
 
-print('\n-----------------------------------------MANN-WHITNEY TEST WITH HOLM-----------------------------------')
+# print('\n-----------------------------------------MANN-WHITNEY TEST WITH HOLM-----------------------------------')
 data = pd.DataFrame({"algs": ["DE"] * len(results_avg["DE"]) +
                              ["SADE"] * len(results_avg["SADE"]),
                      "vals": results_avg["DE"] +
                              results_avg["SADE"]})
 
 sp.posthoc_wilcoxon(data, val_col='vals', group_col='algs', p_adjust='holm')
-
 # Data analitics
 f = open('data_analitics.out', 'w')
 data_analitics_DE = {}
@@ -144,6 +143,8 @@ for f in results_basic_DE:
     analitics['max'] = max
     desv_est = st.stdev(values)
     analitics['desv_est'] = desv_est
-    data_analitics_DE[f] = analitics
+    data_analitics_SADE[f] = analitics
+print('\n-----------------------------------------DATA ANALITICS DE-----------------------------------')
 pp.pprint(data_analitics_DE)
+print('\n-----------------------------------------DATA ANALITICS SADE-----------------------------------')
 pp.pprint(data_analitics_SADE)

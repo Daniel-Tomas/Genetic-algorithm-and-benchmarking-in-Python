@@ -74,10 +74,10 @@ if __name__ == '__main__':
         return fun.sphere(array)
 
 
-    mybounds = [(-100, 100), (-200, 200), (-300, 300), (-400, 400)]
+    mybounds = [(-100, 100)] * 10
 
-    myEA = EA(f, mybounds, 50)
+    myEA = EA(f, mybounds, 30)
 
-    myEA.run(2000)
+    myEA.run(250)
 
     myEA.best()
