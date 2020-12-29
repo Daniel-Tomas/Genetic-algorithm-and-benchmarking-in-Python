@@ -111,8 +111,8 @@ if __name__ == '__main__':
     fig1, ax1 = plt.subplots()
     ax1.set_title("Best fitness of each repetition")
     ax1.boxplot(best_fitness, showmeans=True, meanline=True)
-    line1 = Line2D([0], [0], color='green', linewidth=3, linestyle='--')
-    line2 = Line2D([0], [0], color='red', linewidth=3, linestyle='-')
+    line1 = Line2D([0], [0], color='green', linewidth=1, linestyle='--')
+    line2 = Line2D([0], [0], color='red', linewidth=1, linestyle='-')
     lines = [line1, line2]
     labels = ['median', 'mean']
     plt.legend(lines, labels)
