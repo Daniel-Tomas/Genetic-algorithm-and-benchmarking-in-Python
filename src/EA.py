@@ -115,15 +115,15 @@ if __name__ == '__main__':
     line2 = Line2D([0], [0], color='green', linewidth=1, linestyle='--')
     lines = [line1, line2]
     labels = ['mean', 'median']
-    plt.legend(lines, labels, fontsize = 'x-large')
-    #plt.xlabel("Samples")
-    plt.ylabel("Marks", fontsize = 14)
+    plt.legend(lines, labels, fontsize='large')
+    # plt.xlabel("Samples")
+    plt.ylabel("Marks", fontsize=14)
     plt.show()
 
     fig2, ax2 = plt.subplots()
     ax2.set_title("Fitness of each repetition")
     ax2.boxplot(values_myEA, showmeans=True, meanline=True)
-    plt.legend(lines, labels, fontsize = 'x-large')
-    #plt.xlabel("Samples")
-    plt.ylabel("Marks", fontsize = 14)
+    plt.legend(lines, labels, fontsize='large')
+    # plt.xlabel("Samples")
+    plt.ylabel("Marks", fontsize=14)
     plt.show()
