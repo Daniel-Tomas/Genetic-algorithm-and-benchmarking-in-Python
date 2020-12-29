@@ -117,6 +117,7 @@ if __name__ == '__main__':
     labels = ['mean', 'median']
     plt.legend(lines, labels, fontsize='large')
     # plt.xlabel("Samples")
+    plt.xticks([])
     plt.ylabel("Marks", fontsize=14)
     plt.show()
 
