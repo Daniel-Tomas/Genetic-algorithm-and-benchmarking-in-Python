@@ -70,7 +70,7 @@ class EA(object):
         """
         self.population.descendent_sort()
         self.best_genome = self.population.collection[0]
-        return f'Best Genome: {self.best_genome}'
+        return self.best_genome
 
 
 if __name__ == '__main__':
@@ -93,6 +93,7 @@ if __name__ == '__main__':
         return nota
 
 
+    print(f'Las horas mínimas de estudio son: {sum([int(b) / int(m) for b,m in zip(minimum_marks, point_per_hour)])}')
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
     best_fitness = []
     worst_fitness = []
@@ -101,15 +102,16 @@ if __name__ == '__main__':
         values = []
         myEA = EA(f, mybounds, 30)
         myEA.run(500)
-        print(myEA.best())
+        print(f'Best Genome: {myEA.best()}')
         best_fitness.append(myEA.best_genome.fitness)
         for i in myEA.population.collection:
             values.append(i.fitness)
         values_myEA.append(values)
+    print(f'Obtendría la mejor nota estudiando un total de: {sum(myEA.best_genome.array)} horas')
     # meanpointprops = dict(marker='x', markeredgecolor='blue',
     #                      markerfacecolor='blue')
     fig1, ax1 = plt.subplots()
-    ax1.set_title("Best fitness of each repetition")
+    ax1.set_title("Best fitness of each repetition", fontsize=18)
     ax1.boxplot(best_fitness, showmeans=True, meanline=True)
     line1 = Line2D([0], [0], color='orange', linewidth=1, linestyle='-')
     line2 = Line2D([0], [0], color='green', linewidth=1, linestyle='--')
@@ -122,7 +124,7 @@ if __name__ == '__main__':
     plt.show()
 
     fig2, ax2 = plt.subplots()
-    ax2.set_title("Fitness of each repetition")
+    ax2.set_title("Fitness of each repetition", fontsize=18)
     ax2.boxplot(values_myEA, showmeans=True, meanline=True)
     plt.legend(lines, labels, fontsize='large')
     # plt.xlabel("Samples")
