@@ -89,10 +89,12 @@ if __name__ == '__main__':
             res += mark * credits[i]
         nota = res / sum(credits)
         if (sum(array) > study_hours):
-            return -(nota * (sum(array) - study_hours)) ** 2
+            return -(sum(array) - study_hours) ** 2 / nota
         return nota
 
 
+    population_size = int(input('Introduzca el tamaño de población: '))
+    iterations = int(input('Introduzca el número de iteraciones: '))
     print(f'Las horas mínimas de estudio son: {sum([int(b) / int(m) for b,m in zip(minimum_marks, point_per_hour)])}')
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
     best_fitness = []
@@ -100,8 +102,8 @@ if __name__ == '__main__':
     values_myEA = []
     for i in range(reps):
         values = []
-        myEA = EA(f, mybounds, 30)
-        myEA.run(500)
+        myEA = EA(f, mybounds, population_size)
+        myEA.run(iterations)
         print(f'Best Genome: {myEA.best()}')
         best_fitness.append(myEA.best_genome.fitness)
         for i in myEA.population.collection:
