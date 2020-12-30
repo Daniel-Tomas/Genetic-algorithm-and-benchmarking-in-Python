@@ -10,6 +10,7 @@ import scikit_posthocs as sp
 import statistics as st
 from IPython.display import display
 import dataframe_image as dfi
+import matplotlib.pyplot as plt
 
 
 class Logger():
@@ -20,6 +21,12 @@ class Logger():
     def write(self, message):
         self.log.write(message)
         self.terminal.write(message)
+
+    def flush(self):
+        # this flush method is needed for python 3 compatibility.
+        # this handles the flush command by doing nothing.
+        # you might want to specify some extra behavior here.
+        pass
 
 
 sys.stdout = Logger()
@@ -56,7 +63,7 @@ def run_basic_DE(bounds, probsize, popsize, func, iters, reps):
     return results
 
 
-params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 250, 'reps': 15}
+params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 250, 'reps': 10}
 
 print('\n----------------------------------------RESULTS BASIC DE-------------------------------------------')
 results_basic_DE = {}
@@ -129,6 +136,7 @@ for f in results_basic_DE:
 
 pp.pprint(data_analitics_DE)
 
+
 # -----------------------------------------DATA ANALITICS DE TABLES-----------------------------------
 # df = pd.DataFrame(data_analitics_DE)
 #
@@ -182,3 +190,15 @@ pp.pprint(data_analitics_SADE)
 df2 = pd.DataFrame(data_analitics_SADE).transpose()
 df_styled = df2.style.applymap(color_negative_red, subset=pd.IndexSlice[:, ['mean']]).format("{:.4e}")
 dfi.export(df_styled, "tableSADE.png")
+# -----------------------------------------BoxPlots-----------------------------------
+
+for func in results_basic_DE:
+    data = []
+    fig1, ax1 = plt.subplots()
+    ax1.set_title(func, fontsize=16)
+    data.append(results_basic_DE.get(func))
+    data.append(results_SADE.get(func))
+    ax1.boxplot(data, showmeans=True, meanline=True)
+    plt.xticks([1, 2], ["Basic DE", "SADE"], fontsize=16)
+    plt.ylabel("Fitness", fontsize=18)
+    plt.show()
