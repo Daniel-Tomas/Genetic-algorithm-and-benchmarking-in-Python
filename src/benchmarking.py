@@ -8,6 +8,8 @@ from scipy.stats import friedmanchisquare
 import pandas as pd
 import scikit_posthocs as sp
 import statistics as st
+from IPython.display import display
+import dataframe_image as dfi
 
 
 class Logger():
@@ -16,14 +18,8 @@ class Logger():
         self.log = open('benchmarking.out', 'w')
 
     def write(self, message):
-        self.terminal.write(message)
         self.log.write(message)
-
-    def flush(self):
-        # this flush method is needed for python 3 compatibility.
-        # this handles the flush command by doing nothing.
-        # you might want to specify some extra behavior here.
-        pass
+        self.terminal.write(message)
 
 
 sys.stdout = Logger()
@@ -60,7 +56,7 @@ def run_basic_DE(bounds, probsize, popsize, func, iters, reps):
     return results
 
 
-params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 250, 'reps': 5}
+params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 250, 'reps': 15}
 
 print('\n----------------------------------------RESULTS BASIC DE-------------------------------------------')
 results_basic_DE = {}
@@ -110,6 +106,8 @@ data = pd.DataFrame({"algs": ["DE"] * len(results_avg["DE"]) +
                              results_avg["SADE"]})
 
 sp.posthoc_wilcoxon(data, val_col='vals', group_col='algs', p_adjust='holm')
+
+print('\n-----------------------------------------DATA ANALITICS DE-----------------------------------')
 # Data analitics
 f = open('data_analitics.out', 'w')
 data_analitics_DE = {}
@@ -128,6 +126,33 @@ for f in results_basic_DE:
     desv_est = st.stdev(values)
     analitics['desv_est'] = desv_est
     data_analitics_DE[f] = analitics
+
+pp.pprint(data_analitics_DE)
+
+# -----------------------------------------DATA ANALITICS DE TABLES-----------------------------------
+# df = pd.DataFrame(data_analitics_DE)
+#
+# # displaying the DataFrame
+# pd.set_option("display.max_rows", None, "display.max_columns", None)
+# print(df)
+
+def color_negative_red(val):
+    if val < 1:
+        color = 'green'
+    elif val < 10:
+        color = 'orange'
+    elif val >= 100:
+        color = 'red'
+    else:
+        color = 'black'
+    return 'color: %s' % color
+
+
+df2 = pd.DataFrame(data_analitics_DE).transpose()
+df_styled = df2.style.applymap(color_negative_red, subset=pd.IndexSlice[:, ['mean']]).format("{:.4e}")
+dfi.export(df_styled, "tableDE.png")
+
+print('\n-----------------------------------------DATA ANALITICS SADE-----------------------------------')
 data_analitics_SADE = {}
 for f in results_basic_DE:
     analitics = {}
@@ -144,7 +169,16 @@ for f in results_basic_DE:
     desv_est = st.stdev(values)
     analitics['desv_est'] = desv_est
     data_analitics_SADE[f] = analitics
-print('\n-----------------------------------------DATA ANALITICS DE-----------------------------------')
-pp.pprint(data_analitics_DE)
-print('\n-----------------------------------------DATA ANALITICS SADE-----------------------------------')
+
 pp.pprint(data_analitics_SADE)
+
+# -----------------------------------------DATA ANALITICS SADE TABLES-----------------------------------
+# df2 = pd.DataFrame(data_analitics_SADE)
+#
+# # displaying the DataFrame
+# # pd.set_option("display.max_rows", None, "display.max_columns", None)
+# print(df2)
+
+df2 = pd.DataFrame(data_analitics_SADE).transpose()
+df_styled = df2.style.applymap(color_negative_red, subset=pd.IndexSlice[:, ['mean']]).format("{:.4e}")
+dfi.export(df_styled, "tableSADE.png")
