@@ -82,20 +82,20 @@ if __name__ == '__main__':
         res = 0
         for i in range(len(array)):
             mark = (array[i] * point_per_hour[i])
-            if (student_luck <= revision_probability[i]):
+            if student_luck <= revision_probability[i]:
                 mark += revision_mark[i]
-            if (mark > 10):
+            if mark > 10:
                 mark = 10
             res += mark * credits[i]
         nota = res / sum(credits)
-        if (sum(array) > study_hours):
-            return -(sum(array) - study_hours) ** 2 / nota
+        if sum(array) > study_hours:
+            return -((sum(array) - study_hours) ** 2 / nota)
         return nota
 
 
-    population_size = int(input('Introduzca el tamaño de población: '))
-    iterations = int(input('Introduzca el número de iteraciones: '))
-    print(f'Las horas mínimas de estudio son: {sum([int(b) / int(m) for b,m in zip(minimum_marks, point_per_hour)])}')
+    population_size = int(input('Introduzca el tamaño de población: ') or '50')
+    iterations = int(input('Introduzca el número de iteraciones: ') or '500')
+    print(f'Las horas mínimas de estudio son: {[int(b) / int(m) for b, m in zip(minimum_marks, point_per_hour)]}')
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
     best_fitness = []
     worst_fitness = []
@@ -109,7 +109,7 @@ if __name__ == '__main__':
         for i in myEA.population.collection:
             values.append(i.fitness)
         values_myEA.append(values)
-    print(f'Obtendría la mejor nota estudiando un total de: {sum(myEA.best_genome.array)} horas')
+    print(f'Obtendría la mejor nota estudiando un total de: {sum(myEA.best_genome.array):.5} horas')
     # meanpointprops = dict(marker='x', markeredgecolor='blue',
     #                      markerfacecolor='blue')
     fig1, ax1 = plt.subplots()
