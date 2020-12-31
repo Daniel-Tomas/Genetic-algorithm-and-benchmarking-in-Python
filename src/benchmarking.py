@@ -8,12 +8,11 @@ from scipy.stats import friedmanchisquare
 import pandas as pd
 import scikit_posthocs as sp
 import statistics as st
-from IPython.display import display
 import dataframe_image as dfi
 import matplotlib.pyplot as plt
 
 
-class Logger():
+class Logger:
     def __init__(self):
         self.terminal = sys.stdout
         self.log = open('benchmarking.out', 'w')
@@ -63,7 +62,7 @@ def run_basic_DE(bounds, probsize, popsize, func, iters, reps):
     return results
 
 
-params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 250, 'reps': 10}
+params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 250, 'reps': 25}
 
 print('\n----------------------------------------RESULTS BASIC DE-------------------------------------------')
 results_basic_DE = {}
@@ -103,8 +102,9 @@ for func in benchmark:
     results_avg["SADE"].append(np.mean(results_SADE[f]))
 
 pp.pprint(results_avg)
+
 # print('\n-----------------------------------------FRIEDMAN TEST-----------------------------------')
-# friedmanchisquare(results_avg["DE"], results_avg["SADE"])
+# friedmanchisquare(results_avg["DE"], results_avg["SADE"], [])
 
 # print('\n-----------------------------------------MANN-WHITNEY TEST WITH HOLM-----------------------------------')
 data = pd.DataFrame({"algs": ["DE"] * len(results_avg["DE"]) +
@@ -112,7 +112,8 @@ data = pd.DataFrame({"algs": ["DE"] * len(results_avg["DE"]) +
                      "vals": results_avg["DE"] +
                              results_avg["SADE"]})
 
-sp.posthoc_wilcoxon(data, val_col='vals', group_col='algs', p_adjust='holm')
+df_styled0 = sp.posthoc_wilcoxon(data, val_col='vals', group_col='algs', p_adjust='holm').style
+dfi.export(df_styled0, "tableWHITNEY.png")
 
 print('\n-----------------------------------------DATA ANALITICS DE-----------------------------------')
 # Data analitics
@@ -157,8 +158,8 @@ def color_negative_red(val):
 
 
 df2 = pd.DataFrame(data_analitics_DE).transpose()
-df_styled = df2.style.applymap(color_negative_red, subset=pd.IndexSlice[:, ['mean']]).format("{:.4e}")
-dfi.export(df_styled, "tableDE.png")
+df_styled1 = df2.style.applymap(color_negative_red, subset=pd.IndexSlice[:, ['mean']]).format("{:.4e}")
+dfi.export(df_styled1, "tableDE.png")
 
 print('\n-----------------------------------------DATA ANALITICS SADE-----------------------------------')
 data_analitics_SADE = {}
@@ -188,8 +189,8 @@ pp.pprint(data_analitics_SADE)
 # print(df2)
 
 df2 = pd.DataFrame(data_analitics_SADE).transpose()
-df_styled = df2.style.applymap(color_negative_red, subset=pd.IndexSlice[:, ['mean']]).format("{:.4e}")
-dfi.export(df_styled, "tableSADE.png")
+df_styled2 = df2.style.applymap(color_negative_red, subset=pd.IndexSlice[:, ['mean']]).format("{:.4e}")
+dfi.export(df_styled2, "tableSADE.png")
 # -----------------------------------------BoxPlots-----------------------------------
 
 for func in results_basic_DE:
