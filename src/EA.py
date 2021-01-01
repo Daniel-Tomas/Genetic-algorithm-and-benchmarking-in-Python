@@ -93,23 +93,38 @@ if __name__ == '__main__':
         return nota
 
 
-    population_size = int(input('Introduzca el tamaño de población: ') or '50')
-    iterations = int(input('Introduzca el número de iteraciones: ') or '500')
-    print(f'Las horas mínimas de estudio son: {[int(b) / int(m) for b, m in zip(minimum_marks, point_per_hour)]}')
+    print(f'El número de asignaturas a evaluar son: {len(minimum_marks)}')
+    population_size = int(input('Introduzca el tamaño de población, en caso de no hacerlo y pulsar'
+                                ' la tecla "enter" el valor será "50": ') or '50')
+    iterations = int(input('Introduzca el número de iteraciones, en caso de no hacerlo y pulsar'
+                                ' la tecla "enter" el valor será "500": ') or '500')
+
+    min_hour = [int(b) / int(m) for b, m in zip(minimum_marks, point_per_hour)]
+    np.set_printoptions(precision=3)
+    print(f'Las horas mínimas de estudio son: \n'
+          f'               {np.array(min_hour)}')
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
+
+    myEA = EA(f, mybounds, population_size)
+    myEA.run(iterations)
+    print(f'Best Genome: {myEA.best()}')
+    print(f'Obtendría la mejor nota estudiando un total de: {sum(myEA.best_genome.array):.5} horas \n')
+
+    print(f'Ahora vamos a ajecutar el algoritmos varias veces para ver como se comporta con un tamaño de población = 50'
+          f' y 500 iteraciones')
+    reps = int(input('Por favor, introduce el número de repeticiones que desea ejecutar el algoritmos: ') or '10')
     best_fitness = []
     worst_fitness = []
     values_myEA = []
     for i in range(reps):
         values = []
-        myEA = EA(f, mybounds, population_size)
-        myEA.run(iterations)
+        myEA = EA(f, mybounds, 50)
+        myEA.run(500)
         print(f'Best Genome: {myEA.best()}')
         best_fitness.append(myEA.best_genome.fitness)
         for i in myEA.population.collection:
             values.append(i.fitness)
         values_myEA.append(values)
-    print(f'Obtendría la mejor nota estudiando un total de: {sum(myEA.best_genome.array):.5} horas')
     # meanpointprops = dict(marker='x', markeredgecolor='blue',
     #                      markerfacecolor='blue')
     fig1, ax1 = plt.subplots()
