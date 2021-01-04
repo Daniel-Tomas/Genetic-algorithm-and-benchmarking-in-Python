@@ -102,7 +102,7 @@ if __name__ == '__main__':
     min_hour = [int(b) / int(m) for b, m in zip(minimum_marks, point_per_hour)]
     np.set_printoptions(precision=3)
     print(f'Las horas mínimas de estudio por cada asignatura son: \n'
-          f'               {np.array(min_hour)}')
+          f'Horas mínimas: {np.array(min_hour)}')
     mybounds = [(minimum_marks[i] / point_per_hour[i], 10 / point_per_hour[i]) for i in range(len(credits))]
 
     myEA = EA(f, mybounds, population_size)
