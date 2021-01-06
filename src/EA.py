@@ -5,7 +5,6 @@ from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 # todo imprimir dos decimales (Ejemplo en fitness resultante)
 # todo hacer memoria
 class EA(object):
@@ -141,6 +140,7 @@ if __name__ == '__main__':
     # plt.xlabel("Samples")
     plt.xticks([])
     plt.ylabel("Marks", fontsize=14)
+    plt.savefig('grafica_1.png')
     plt.show()
 
     fig2, ax2 = plt.subplots()
@@ -149,4 +149,5 @@ if __name__ == '__main__':
     plt.legend(lines, labels, fontsize='large')
     # plt.xlabel("Samples")
     plt.ylabel("Marks", fontsize=14)
+    plt.savefig('grafica_2.png')
     plt.show()
