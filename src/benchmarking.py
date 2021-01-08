@@ -10,6 +10,7 @@ import scikit_posthocs as sp
 import statistics as st
 import dataframe_image as dfi
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 
 
 class Logger:
@@ -62,7 +63,7 @@ def run_basic_DE(bounds, probsize, popsize, func, iters, reps):
     return results
 
 
-params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 250, 'reps': 25}
+params = {'bounds': (-100, 100), 'probsize': 10, 'popsize': 30, 'iters': 5, 'reps': 10}
 
 print('\n----------------------------------------RESULTS BASIC DE-------------------------------------------')
 results_basic_DE = {}
@@ -202,4 +203,9 @@ for func in results_basic_DE:
     ax1.boxplot(data, showmeans=True, meanline=True)
     plt.xticks([1, 2], ["Basic DE", "SADE"], fontsize=16)
     plt.ylabel("Fitness", fontsize=18)
+    line1 = Line2D([0], [0], color='orange', linewidth=1, linestyle='-')
+    line2 = Line2D([0], [0], color='green', linewidth=1, linestyle='--')
+    lines = [line1, line2]
+    labels = ['mean', 'median']
+    plt.legend(lines, labels, fontsize='large')
     plt.show()
