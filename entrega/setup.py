@@ -6,10 +6,10 @@ with open(
 
 setuptools.setup(
     name="group14",  # Replace with your own username
-    version="1.0.0",
+    version="2.1.0",
     author="Group14",
     author_email="author@example.com",
-    description="Heuristic optimization 1st practical work, by Group 14.",
+    description="Heuristic optimization 2.1 practical work, by Group 14.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject",
