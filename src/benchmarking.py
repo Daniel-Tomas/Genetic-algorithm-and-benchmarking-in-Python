@@ -1,16 +1,16 @@
-from src.EA import EA
 import sys
 from benchmarks.functions import *
 import pyade.sade as sade
 import pprint
 from scipy.stats import kruskal
-from scipy.stats import friedmanchisquare
 import pandas as pd
 import scikit_posthocs as sp
 import statistics as st
 import dataframe_image as dfi
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+
+from EA import EA
 
 
 class Logger:
@@ -115,7 +115,6 @@ dfi.export(df_styled0, "tableWHITNEY.png")
 
 print('\n-----------------------------------------DATA ANALITICS DE-----------------------------------')
 # Data analitics
-f = open('data_analitics.out', 'w')
 data_analitics_DE = {}
 for f in results_basic_DE:
     analitics = {}

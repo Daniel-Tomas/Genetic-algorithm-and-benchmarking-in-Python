@@ -1,5 +1,5 @@
-from src.ImplementedClasses import *
-from src.Population import Population
+from ImplementedClasses import *
+from Population import Population
 from benchmarks import functions as fun
 
 

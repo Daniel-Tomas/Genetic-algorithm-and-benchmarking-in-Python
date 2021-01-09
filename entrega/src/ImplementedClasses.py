@@ -1,9 +1,9 @@
-from src import AbstractClasses
+import AbstractClasses
 import random
 import numpy as np
 
-from src.Genome import Genome
-from src.Population import Population
+from Genome import Genome
+from Population import Population
 
 
 class UniformSelectionOperator(AbstractClasses.SelectionOperator):

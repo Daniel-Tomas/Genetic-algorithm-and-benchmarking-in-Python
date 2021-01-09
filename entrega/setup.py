@@ -1,8 +1,7 @@
 import setuptools
 
 with open(
-        "../../../../Google Drive/Curso 3º GII/1er Cuatrimestre_/OH - Optimización Heurística/Practica/groupDaniAaron/README.md",
-        "r") as fh:
+        "README.txt","r") as fh:
     long_description = fh.read()
 
 setuptools.setup(

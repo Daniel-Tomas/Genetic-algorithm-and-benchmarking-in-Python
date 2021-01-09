@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: group14
+Version: 1.0.0
+Summary: Heuristic optimization 1st practical work, by Group 14.
+Home-page: https://github.com/pypa/sampleproject
+Author: Group14
+Author-email: author@example.com
+License: UNKNOWN
+Description: CONFIGURAR EL ENTORNO
+        	Para instalar las dependencias del proyecto y poder ejecutarlo debes ejecutar lo siguiente en una terminal correctamente configurada con conda:
+        
+        		-Si tienes windows ejecuta:
+        			conda env create -f windows-environment.yml
+        		-En otro caso (no aseguramos que funcione en otros sistemas operativos):
+        			conda env create -f cross-plataforms-environment.yml
+        
+        	En ambos casos se creara un nuevo conda enviroment donde podras ejecutar correctamente el proyecto.
+        
+        
+        EJECUTAR:
+        
+        	Puedes ejecutar el proyecto con el siguiente comando:
+        		python src/benchmarking.py
+        
+        	En el fichero de texto "benchmarking.out" se puede ver el output de una ejecuciÃ³n del proyecto.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
