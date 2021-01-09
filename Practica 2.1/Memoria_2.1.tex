@@ -105,7 +105,7 @@ El código contiene toda la parte del algoritmo implementado por nosotros y un p
 \item \textbf{tableSADE.png}: es la tabla que contiene los valores estadísticos nombrados anteriormente para cada función cuando se usa optimiza mediante nuestro SADE.
 \item \textbf{tableWhitney.png}: es la tabla que contiene el test de Wilcoxon comparando ambos algoritmos.
 \end{itemize}
-Además, se generan diferentes diagramas de caja comparando los dos algoritmos juntos por cada función.
+Además, se generan diferentes diagramas de cajas comparando los dos algoritmos juntos por cada función.
 
 \newpage
 
@@ -157,11 +157,12 @@ Results for the schaffer function: 1.3328142940540802e-09\\
 
 \vspace{5mm}
 
-Como vemos, todos ellos tienen un p-valor muy cercano al 0 lo que nos indica que los test, efectivamente, se han realizado con la misma población de datos. Además, puesto que los p-valor son muy cercanos a 0, nos denota que los fitness de las funciones tienen diferencias significativas por lo que no se puede asumir que el fitness en todas esas funciones sea el mismo. Por ello, se puede aplicar el Test de Mann Whitnet-Wilcoxon.
+Como vemos, todos ellos tienen un p-valor muy cercano al 0 lo que nos indica que: uno, los test, efectivamente, se han realizado con la %
+misma población de datos y, dos, que los fitness de las funciones tienen diferencias significativas por lo que no se puede asumir que el fitness en todas esas funciones sea el mismo. Por ello, se puede aplicar el Test de Mann Whitnet-Wilcoxon.
 \newpage
 \subsubsection{Test de Mann Whitney-Wilcoxon}
 \vspace{5mm}
-El test de Mann Whitney-Wilcoxon, al igual que el de Kruskal, es un test no paramétrico que consiste en ver si hay diferencias significativas en el comportamiento de ambos algoritmos. Para ello, se toma la hipótesis nula de que la diferencia de las medianas de las dos distribuciones es 0.
+El test de Mann Whitney-Wilcoxon con corrección de Holm, al igual que el de Kruskal, es un test no paramétrico que consiste en ver si hay diferencias significativas en el comportamiento de ambos algoritmos. Para ello, se toma la hipótesis nula de que la diferencia de las medianas de las dos distribuciones es 0.
 
 \vspace{5mm}
 
@@ -172,33 +173,36 @@ El test de Mann Whitney-Wilcoxon, al igual que el de Kruskal, es un test no para
 \vspace{5mm}
 
 Como vemos en la tabla, el p-valor comparando ambos algoritmos es muy cercano a 0 y menor que el 0.05\% lo que nos ratifica que el SADE es sustancialmente mejor que nuestro DE.
-\subsection{Diagramas de caja (boxplots)}
-A continuación vamos a comparar los diferentes algoritmos viendo los diagramas de caja en diferentes funciones significativas. Para ello se realizarán mediante la ejecucion de 25 repeticiones, cada una de ellas con 250 iteraciones. Este pequeño número de iteraciones sirve para ver la diferencia de eficiencia y convergencia entre ambos algoritmos ya que, con estas pocas, el SADE llega al óptimo mientras que el DE no se acerca en casi ninguna de ellas.
-\subsubsection{Diagrama de caja - Sphere}
+\subsection{Diagramas de cajas (boxplots)}
+A continuación vamos a comparar los diferentes algoritmos viendo los diagramas de cajas en diferentes funciones significativas. Para ello se realizarán mediante la ejecucion de 25 repeticiones, cada una de ellas con 250 iteraciones. Este pequeño número de iteraciones sirve para ver la diferencia de eficiencia y convergencia entre ambos algoritmos ya que, con estas pocas, el SADE llega al óptimo mientras que el DE no se acerca en casi ninguna de ellas.
+\subsubsection{Diagrama de cajas - Sphere}
 \begin{center}
 \includegraphics[scale=0.85]{sphere}
 \end{center}
-En la función $sphere$, se puede apreciar la diferencia de ambos algoritmos. Nuestro DE apenas se acerca al 0, con valores entre 3000 y 150, más o menos, mientras que el SADE llega perfectamente al óptimo con todos sus valores. De hecho, el diagrama de caja del SADE no se aprecia porque todos sus valores son homogéneos como vimos en las tablas mostradas anteriormente en las que la desv\_est es casi 0.
-\subsubsection{Diagrama de caja - Ackley}
+En la función $sphere$, se puede apreciar la diferencia de ambos algoritmos. Nuestro DE apenas se acerca al 0, con valores entre 3000 y 150, más o menos, mientras que el SADE llega perfectamente al óptimo con todos sus valores. De hecho, el diagrama de cajas del SADE no se aprecia porque todos sus valores son homogéneos como vimos en las tablas mostradas anteriormente en las que la desv\_est es casi 0.
+\subsubsection{Diagrama de cajas - Ackley}
 \begin{center}
 \includegraphics[scale=0.85]{ackley}
 \end{center}
 En esta imagen, que muestra los resultados de ambos algoritmos para la función $ackley$, podemos ver que se diferencian de 20. En este caso, el DE parece que alcanza un mínimo local ya que todos los valores están en 20, aunque se vea que, mediante el SADE, el mínimo global sea 0.
-\subsubsection{Diagrama de caja - Rosenbrock}
+\subsubsection{Diagrama de cajas - Rosenbrock}
 \begin{center}
 \includegraphics[scale=0.85]{rosenbrock}
 \end{center}
 Esta figura muestra es muy representativa ya que el DE tiene valores muy superiores al SADE, del orden de millones (véase eje y). Este comportamiento es similar al encontrado anteriormente con la función $sphere$ y a otras funciones de las que no vamos a poner diagrama porque todas se comportan prácticamente igual. Se puede seguir apreciando la diferencia de eficiencia de ambos algoritmos.
-\subsubsection{Diagrama de caja - Schwefel\_2\_22}
+\subsubsection{Diagrama de cajas - Schwefel\_2\_22}
 \begin{center}
 \includegraphics[scale=0.85]{schwefel_2_22}
 \end{center}
-Esta función es un caso aparte. Es la única que tiene valores más o menos parecidos tanto en DE como en SADE. Aunque el DE tiene gran parte de sus valores cercanos al óptimo (0), hay muchos valores atípicos muy alejados de este, lo que hace que la media se dispare y salga fuera del diagrama de caja.
+Esta función es un caso aparte. Es la única que tiene valores más o menos parecidos tanto en DE como en SADE. Aunque el DE tiene gran parte de sus valores cercanos al óptimo (0), hay muchos valores atípicos muy alejados de este, lo que hace que la media se dispare y salga fuera del diagrama de cajas.
+
+\clearpage
+
 \section{Conclusión}
 De este trabajo hemos sacado varias conclusiones:
 \begin{itemize}
 \item Hay una gran diferencia de algoritmos de optimización que, por lo general, son mejores los ya implementados que los implementados por nosotros ya que son más complejos.
 \item Hemos descubierto formas de comparar algoritmos que nunca antes habíamos visto.
-\item Al usar diferentes librerías estadísticas, tanto para los test como para los diagramas de caja, hemos podido adentrarnos un poco en este mundillo que es muy complejo y, si a eso se le suma \LaTeX, el aprendizaje es mayor.
+\item Al usar diferentes librerías estadísticas, tanto para los test como para los diagramas de cajas, hemos podido adentrarnos un poco en este mundillo que es muy complejo y, si a eso se le suma \LaTeX, el aprendizaje es mayor.
 \end{itemize}
 \end{document}
