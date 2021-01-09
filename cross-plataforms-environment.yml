@@ -1,0 +1,11 @@
+name: Optimizacion-Heuristica
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy
+  - matplotlib
+  - pandas
+  - ipython
+  - notebook
+prefix: C:\Users\Daniel\anaconda3\envs\Optimizacion-Heuristica
