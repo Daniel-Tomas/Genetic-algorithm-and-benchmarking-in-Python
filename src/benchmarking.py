@@ -104,9 +104,6 @@ for func in benchmark:
 
 pp.pprint(results_avg)
 
-# print('\n-----------------------------------------FRIEDMAN TEST-----------------------------------')
-# friedmanchisquare(results_avg["DE"], results_avg["SADE"], [])
-
 # print('\n-----------------------------------------MANN-WHITNEY TEST WITH HOLM-----------------------------------')
 data = pd.DataFrame({"algs": ["DE"] * len(results_avg["DE"]) +
                              ["SADE"] * len(results_avg["SADE"]),
@@ -183,17 +180,11 @@ for f in results_basic_DE:
 pp.pprint(data_analitics_SADE)
 
 # -----------------------------------------DATA ANALITICS SADE TABLES-----------------------------------
-# df2 = pd.DataFrame(data_analitics_SADE)
-#
-# # displaying the DataFrame
-# # pd.set_option("display.max_rows", None, "display.max_columns", None)
-# print(df2)
-
 df2 = pd.DataFrame(data_analitics_SADE).transpose()
 df_styled2 = df2.style.applymap(color_negative_red, subset=pd.IndexSlice[:, ['mean']]).format("{:.4e}")
 dfi.export(df_styled2, "tableSADE.png")
-# -----------------------------------------BoxPlots-----------------------------------
 
+# -----------------------------------------BoxPlots-----------------------------------
 for func in results_basic_DE:
     data = []
     fig1, ax1 = plt.subplots()
