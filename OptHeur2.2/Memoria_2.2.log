@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.3)  7 JAN 2021 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.3)  10 JAN 2021 12:18
 entering extended mode
 **./Memoria_2.2.tex
 (Memoria_2.2.tex
@@ -21,27 +21,54 @@ File: size11.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
 )
+(C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count185
+\Gm@cntv=\count186
+\c@Gm@tempcnt=\count187
+\Gm@bindingoffset=\dimen139
+\Gm@wd@mp=\dimen140
+\Gm@odd@mp=\dimen141
+\Gm@even@mp=\dimen142
+\Gm@layoutwidth=\dimen143
+\Gm@layoutheight=\dimen144
+\Gm@layouthoffset=\dimen145
+\Gm@layoutvoffset=\dimen146
+\Gm@dimlist=\toks16
+
+(C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
 )
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
 )
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2020/12/16 3.52 The Babel package
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
 File: babel.def 2020/12/16 3.52 Babel common definitions
-\babel@savecnt=\count185
-\U@D=\dimen139
+\babel@savecnt=\count188
+\U@D=\dimen147
 \l@babelnohyphens=\language84
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 )
-\bbl@dirlevel=\count186
+\bbl@dirlevel=\count189
 
 *************************************
 * Local config file bblopts.cfg used
@@ -53,8 +80,8 @@ File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.l
 df
 Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
-\es@quottoks=\toks17
-\es@quotdepth=\count187
+\es@quottoks=\toks19
+\es@quotdepth=\count190
 Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
@@ -70,51 +97,51 @@ Package: amstext 2000/06/29 v2.01 AMS text
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
-\ex@=\dimen140
+\@emptytoks=\toks20
+\ex@=\dimen148
 ))
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen141
+\pmbraise@=\dimen149
 )
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count188
+\inf@bad=\count191
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count189
-\leftroot@=\count190
+\uproot@=\count192
+\leftroot@=\count193
 LaTeX Info: Redefining \overline on input line 399.
-\classnum@=\count191
-\DOTSCASE@=\count192
+\classnum@=\count194
+\DOTSCASE@=\count195
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
 \Mathstrutbox@=\box47
 \strutbox@=\box48
-\big@size=\dimen142
+\big@size=\dimen150
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count193
-\c@MaxMatrixCols=\count194
+\macc@depth=\count196
+\c@MaxMatrixCols=\count197
 \dotsspace@=\muskip16
-\c@parentequation=\count195
-\dspbrk@lvl=\count196
-\tag@help=\toks19
-\row@=\count197
-\column@=\count198
-\maxfields@=\count199
-\andhelp@=\toks20
-\eqnshift@=\dimen143
-\alignsep@=\dimen144
-\tagshift@=\dimen145
-\tagwidth@=\dimen146
-\totwidth@=\dimen147
-\lineht@=\dimen148
-\@envbody=\toks21
+\c@parentequation=\count198
+\dspbrk@lvl=\count199
+\tag@help=\toks21
+\row@=\count266
+\column@=\count267
+\maxfields@=\count268
+\andhelp@=\toks22
+\eqnshift@=\dimen151
+\alignsep@=\dimen152
+\tagshift@=\dimen153
+\tagwidth@=\dimen154
+\totwidth@=\dimen155
+\lineht@=\dimen156
+\@envbody=\toks23
 \multlinegap=\skip50
 \multlinetaggap=\skip51
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
@@ -155,12 +182,12 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box49
 \beforetitleunit=\skip61
 \aftertitleunit=\skip62
-\ttl@plus=\dimen149
-\ttl@minus=\dimen150
-\ttl@toksa=\toks23
-\titlewidth=\dimen151
-\titlewidthlast=\dimen152
-\titlewidthfirst=\dimen153
+\ttl@plus=\dimen157
+\ttl@minus=\dimen158
+\ttl@toksa=\toks25
+\titlewidth=\dimen159
+\titlewidthlast=\dimen160
+\titlewidthfirst=\dimen161
 )
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/titling\titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
@@ -207,19 +234,15 @@ Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count266
+\etb@tempcnta=\count269
 )
-(C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks24
-)
-\csq@reset=\count267
-\csq@gtype=\count268
-\csq@glevel=\count269
-\csq@qlevel=\count270
-\csq@maxlvl=\count271
-\csq@tshold=\count272
-\csq@ltx@everypar=\toks25
+\csq@reset=\count270
+\csq@gtype=\count271
+\csq@glevel=\count272
+\csq@qlevel=\count273
+\csq@maxlvl=\count274
+\csq@tshold=\count275
+\csq@ltx@everypar=\toks26
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
@@ -241,8 +264,6 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.s
 ty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
-Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -259,7 +280,7 @@ ty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )) (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count273
+\lrq@indent=\count276
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
@@ -271,48 +292,48 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-\c@tabx@nest=\count274
-\c@listtotal=\count275
-\c@listcount=\count276
-\c@liststart=\count277
-\c@liststop=\count278
-\c@citecount=\count279
-\c@citetotal=\count280
-\c@multicitecount=\count281
-\c@multicitetotal=\count282
-\c@instcount=\count283
-\c@maxnames=\count284
-\c@minnames=\count285
-\c@maxitems=\count286
-\c@minitems=\count287
-\c@citecounter=\count288
-\c@maxcitecounter=\count289
-\c@savedcitecounter=\count290
-\c@uniquelist=\count291
-\c@uniquename=\count292
-\c@refsection=\count293
-\c@refsegment=\count294
-\c@maxextratitle=\count295
-\c@maxextratitleyear=\count296
-\c@maxextraname=\count297
-\c@maxextradate=\count298
-\c@maxextraalpha=\count299
-\c@abbrvpenalty=\count300
-\c@highnamepenalty=\count301
-\c@lownamepenalty=\count302
-\c@maxparens=\count303
-\c@parenlevel=\count304
-\blx@tempcnta=\count305
-\blx@tempcntb=\count306
-\blx@tempcntc=\count307
-\blx@maxsection=\count308
-\blx@maxsegment@0=\count309
-\blx@notetype=\count310
-\blx@parenlevel@text=\count311
-\blx@parenlevel@foot=\count312
-\blx@sectionciteorder@0=\count313
-\blx@entrysetcounter=\count314
-\blx@biblioinstance=\count315
+\c@tabx@nest=\count277
+\c@listtotal=\count278
+\c@listcount=\count279
+\c@liststart=\count280
+\c@liststop=\count281
+\c@citecount=\count282
+\c@citetotal=\count283
+\c@multicitecount=\count284
+\c@multicitetotal=\count285
+\c@instcount=\count286
+\c@maxnames=\count287
+\c@minnames=\count288
+\c@maxitems=\count289
+\c@minitems=\count290
+\c@citecounter=\count291
+\c@maxcitecounter=\count292
+\c@savedcitecounter=\count293
+\c@uniquelist=\count294
+\c@uniquename=\count295
+\c@refsection=\count296
+\c@refsegment=\count297
+\c@maxextratitle=\count298
+\c@maxextratitleyear=\count299
+\c@maxextraname=\count300
+\c@maxextradate=\count301
+\c@maxextraalpha=\count302
+\c@abbrvpenalty=\count303
+\c@highnamepenalty=\count304
+\c@lownamepenalty=\count305
+\c@maxparens=\count306
+\c@parenlevel=\count307
+\blx@tempcnta=\count308
+\blx@tempcntb=\count309
+\blx@tempcntc=\count310
+\blx@maxsection=\count311
+\blx@maxsegment@0=\count312
+\blx@notetype=\count313
+\blx@parenlevel@text=\count314
+\blx@parenlevel@foot=\count315
+\blx@sectionciteorder@0=\count316
+\blx@entrysetcounter=\count317
+\blx@biblioinstance=\count318
 \labelnumberwidth=\skip66
 \labelalphawidth=\skip67
 \biblabelsep=\skip68
@@ -324,9 +345,9 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language85
-\c@mincomprange=\count316
-\c@maxcomprange=\count317
-\c@mincompwidth=\count318
+\c@mincomprange=\count319
+\c@maxcomprange=\count320
+\c@mincompwidth=\count321
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
@@ -337,74 +358,74 @@ Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'numeric-comp.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count319
-\c@savedafterword=\count320
-\c@annotator=\count321
-\c@savedannotator=\count322
-\c@author=\count323
-\c@savedauthor=\count324
-\c@bookauthor=\count325
-\c@savedbookauthor=\count326
-\c@commentator=\count327
-\c@savedcommentator=\count328
-\c@editor=\count329
-\c@savededitor=\count330
-\c@editora=\count331
-\c@savededitora=\count332
-\c@editorb=\count333
-\c@savededitorb=\count334
-\c@editorc=\count335
-\c@savededitorc=\count336
-\c@foreword=\count337
-\c@savedforeword=\count338
-\c@holder=\count339
-\c@savedholder=\count340
-\c@introduction=\count341
-\c@savedintroduction=\count342
-\c@namea=\count343
-\c@savednamea=\count344
-\c@nameb=\count345
-\c@savednameb=\count346
-\c@namec=\count347
-\c@savednamec=\count348
-\c@translator=\count349
-\c@savedtranslator=\count350
-\c@shortauthor=\count351
-\c@savedshortauthor=\count352
-\c@shorteditor=\count353
-\c@savedshorteditor=\count354
-\c@labelname=\count355
-\c@savedlabelname=\count356
-\c@institution=\count357
-\c@savedinstitution=\count358
-\c@lista=\count359
-\c@savedlista=\count360
-\c@listb=\count361
-\c@savedlistb=\count362
-\c@listc=\count363
-\c@savedlistc=\count364
-\c@listd=\count365
-\c@savedlistd=\count366
-\c@liste=\count367
-\c@savedliste=\count368
-\c@listf=\count369
-\c@savedlistf=\count370
-\c@location=\count371
-\c@savedlocation=\count372
-\c@organization=\count373
-\c@savedorganization=\count374
-\c@origlocation=\count375
-\c@savedoriglocation=\count376
-\c@origpublisher=\count377
-\c@savedorigpublisher=\count378
-\c@publisher=\count379
-\c@savedpublisher=\count380
-\c@language=\count381
-\c@savedlanguage=\count382
-\c@origlanguage=\count383
-\c@savedoriglanguage=\count384
-\c@pageref=\count385
-\c@savedpageref=\count386
+\c@afterword=\count322
+\c@savedafterword=\count323
+\c@annotator=\count324
+\c@savedannotator=\count325
+\c@author=\count326
+\c@savedauthor=\count327
+\c@bookauthor=\count328
+\c@savedbookauthor=\count329
+\c@commentator=\count330
+\c@savedcommentator=\count331
+\c@editor=\count332
+\c@savededitor=\count333
+\c@editora=\count334
+\c@savededitora=\count335
+\c@editorb=\count336
+\c@savededitorb=\count337
+\c@editorc=\count338
+\c@savededitorc=\count339
+\c@foreword=\count340
+\c@savedforeword=\count341
+\c@holder=\count342
+\c@savedholder=\count343
+\c@introduction=\count344
+\c@savedintroduction=\count345
+\c@namea=\count346
+\c@savednamea=\count347
+\c@nameb=\count348
+\c@savednameb=\count349
+\c@namec=\count350
+\c@savednamec=\count351
+\c@translator=\count352
+\c@savedtranslator=\count353
+\c@shortauthor=\count354
+\c@savedshortauthor=\count355
+\c@shorteditor=\count356
+\c@savedshorteditor=\count357
+\c@labelname=\count358
+\c@savedlabelname=\count359
+\c@institution=\count360
+\c@savedinstitution=\count361
+\c@lista=\count362
+\c@savedlista=\count363
+\c@listb=\count364
+\c@savedlistb=\count365
+\c@listc=\count366
+\c@savedlistc=\count367
+\c@listd=\count368
+\c@savedlistd=\count369
+\c@liste=\count370
+\c@savedliste=\count371
+\c@listf=\count372
+\c@savedlistf=\count373
+\c@location=\count374
+\c@savedlocation=\count375
+\c@organization=\count376
+\c@savedorganization=\count377
+\c@origlocation=\count378
+\c@savedoriglocation=\count379
+\c@origpublisher=\count380
+\c@savedorigpublisher=\count381
+\c@publisher=\count382
+\c@savedpublisher=\count383
+\c@language=\count384
+\c@savedlanguage=\count385
+\c@origlanguage=\count386
+\c@savedoriglanguage=\count387
+\c@pageref=\count388
+\c@savedpageref=\count389
 \shorthandwidth=\skip74
 \shortjournalwidth=\skip75
 \shortserieswidth=\skip76
@@ -429,19 +450,19 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
-\c@textcitecount=\count387
-\c@textcitetotal=\count388
-\c@textcitemaxnames=\count389
-\c@biburlbigbreakpenalty=\count390
-\c@biburlbreakpenalty=\count391
-\c@biburlnumpenalty=\count392
-\c@biburlucpenalty=\count393
-\c@biburllcpenalty=\count394
+\c@textcitecount=\count390
+\c@textcitetotal=\count391
+\c@textcitemaxnames=\count392
+\c@biburlbigbreakpenalty=\count393
+\c@biburlbreakpenalty=\count394
+\c@biburlnumpenalty=\count395
+\c@biburlucpenalty=\count396
+\c@biburllcpenalty=\count397
 \biburlbigskip=\muskip18
 \biburlnumskip=\muskip19
 \biburlucskip=\muskip20
 \biburllcskip=\muskip21
-\c@smartand=\count395
+\c@smartand=\count398
 )
 Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.bbx' found.
@@ -461,8 +482,8 @@ Package biblatex Info: ... file 'standard.bbx' found.
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.b
 bx
 File: standard.bbx 2020/12/31 v3.16 biblatex bibliography style (PK/MW)
-\c@bbx:relatedcount=\count396
-\c@bbx:relatedtotal=\count397
+\c@bbx:relatedcount=\count399
+\c@bbx:relatedtotal=\count400
 )))
 Package biblatex Info: Trying to load citation style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.cbx' found.
@@ -470,10 +491,10 @@ Package biblatex Info: ... file 'numeric-comp.cbx' found.
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric-co
 mp.cbx
 File: numeric-comp.cbx 2020/12/31 v3.16 biblatex citation style (PK/MW)
-\c@cbx@tempcnta=\count398
-\c@cbx@tempcntb=\count399
-\c@cbx@tempcntc=\count400
-\c@cbx@tempcntd=\count401
+\c@cbx@tempcnta=\count401
+\c@cbx@tempcntb=\count402
+\c@cbx@tempcntc=\count403
+\c@cbx@tempcntd=\count404
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
 Package biblatex Info: Redefining '\footcite'.
@@ -493,23 +514,23 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 File: biblatex.cfg 
 )) (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.st
 y
-\lst@mode=\count402
+\lst@mode=\count405
 \lst@gtempboxa=\box50
-\lst@token=\toks26
-\lst@length=\count403
-\lst@currlwidth=\dimen154
-\lst@column=\count404
-\lst@pos=\count405
-\lst@lostspace=\dimen155
-\lst@width=\dimen156
-\lst@newlines=\count406
-\lst@lineno=\count407
-\lst@maxwidth=\dimen157
+\lst@token=\toks27
+\lst@length=\count406
+\lst@currlwidth=\dimen162
+\lst@column=\count407
+\lst@pos=\count408
+\lst@lostspace=\dimen163
+\lst@width=\dimen164
+\lst@newlines=\count409
+\lst@lineno=\count410
+\lst@maxwidth=\dimen165
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count408
-\lst@skipnumbers=\count409
+\c@lstnumber=\count411
+\lst@skipnumbers=\count412
 \lst@framebox=\box51
 )
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
@@ -531,8 +552,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen158
-\Gin@req@width=\dimen159
+\Gin@req@height=\dimen166
+\Gin@req@width=\dimen167
 )
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
@@ -554,9 +575,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen160
-\Hy@linkcounter=\count410
-\Hy@pagecounter=\count411
+\@linkdim=\dimen168
+\Hy@linkcounter=\count413
+\Hy@pagecounter=\count414
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
@@ -569,7 +590,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count412
+\Hy@SavedSpaceFactor=\count415
 Package hyperref Info: Option `colorlinks' set `true' on input line 4338.
 Package hyperref Info: Hyper figures OFF on input line 4464.
 Package hyperref Info: Link nesting OFF on input line 4469.
@@ -578,9 +599,9 @@ Package hyperref Info: Plain pages OFF on input line 4479.
 Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count413
+\c@Hy@tempcnt=\count416
 LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen161
+\XeTeXLinkMargin=\dimen169
  (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
@@ -589,9 +610,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count414
-\Field@Width=\dimen162
-\Fld@charsize=\dimen163
+\Fld@menulength=\count417
+\Field@Width=\dimen170
+\Fld@charsize=\dimen171
 Package hyperref Info: Hyper figures OFF on input line 6347.
 Package hyperref Info: Link nesting OFF on input line 6352.
 Package hyperref Info: Hyper index ON on input line 6355.
@@ -607,9 +628,9 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count415
-\c@Item=\count416
-\c@Hfootnote=\count417
+\Hy@abspage=\count418
+\c@Item=\count419
+\c@Hfootnote=\count420
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -620,8 +641,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count418
-\c@bookmark@seq@number=\count419
+\Fld@listcount=\count421
+\c@bookmark@seq@number=\count422
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -636,6 +657,43 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip88
 )
+(C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip89
+\cftbeforetoctitleskip=\skip90
+\cftaftertoctitleskip=\skip91
+\cftbeforepartskip=\skip92
+\cftpartnumwidth=\skip93
+\cftpartindent=\skip94
+\cftbeforesecskip=\skip95
+\cftsecindent=\skip96
+\cftsecnumwidth=\skip97
+\cftbeforesubsecskip=\skip98
+\cftsubsecindent=\skip99
+\cftsubsecnumwidth=\skip100
+\cftbeforesubsubsecskip=\skip101
+\cftsubsubsecindent=\skip102
+\cftsubsubsecnumwidth=\skip103
+\cftbeforeparaskip=\skip104
+\cftparaindent=\skip105
+\cftparanumwidth=\skip106
+\cftbeforesubparaskip=\skip107
+\cftsubparaindent=\skip108
+\cftsubparanumwidth=\skip109
+\cftbeforeloftitleskip=\skip110
+\cftafterloftitleskip=\skip111
+\cftbeforefigskip=\skip112
+\cftfigindent=\skip113
+\cftfignumwidth=\skip114
+\c@lofdepth=\count423
+\c@lotdepth=\count424
+\cftbeforelottitleskip=\skip115
+\cftafterlottitleskip=\skip116
+\cftbeforetabskip=\skip117
+\cfttabindent=\skip118
+\cfttabnumwidth=\skip119
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -644,7 +702,7 @@ Package csquotes Info: Redefining alias 'default' -> 'spanish'.
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count420
+\l__kernel_color_stack_int=\count425
 \l__pdf_internal_box=\box52
 ) (Memoria_2.2.aux
 LaTeX Info: Redefining \. on input line 29.
@@ -652,39 +710,74 @@ LaTeX Info: Redefining \% on input line 29.
 )
 \openout1 = `Memoria_2.2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=702.78308pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \. on input line 66.
+LaTeX Info: Redefining \% on input line 66.
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count421
-\scratchdimen=\dimen164
+\scratchcounter=\count426
+\scratchdimen=\dimen172
 \scratchbox=\box53
-\nofMPsegments=\count422
-\nofMParguments=\count423
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count424
-\MPscratchDim=\dimen165
-\MPnumerator=\count425
-\makeMPintoPDFobject=\count426
-\everyMPtoPDFconversion=\toks28
+\nofMPsegments=\count427
+\nofMParguments=\count428
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count429
+\MPscratchDim=\dimen173
+\MPnumerator=\count430
+\makeMPintoPDFobject=\count431
+\everyMPtoPDFconversion=\toks29
 )
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -727,10 +820,10 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Memoria_2.2.bbl' not found.
 
 No file Memoria_2.2.bbl.
-Package biblatex Info: Reference section=0 on input line 60.
-Package biblatex Info: Reference segment=0 on input line 60.
-\c@lstlisting=\count427
-Package hyperref Info: Link coloring ON on input line 60.
+Package biblatex Info: Reference section=0 on input line 66.
+Package biblatex Info: Reference segment=0 on input line 66.
+\c@lstlisting=\count432
+Package hyperref Info: Link coloring ON on input line 66.
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -741,11 +834,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 lestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count428
+\c@section@level=\count433
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 66.
+LaTeX Info: Redefining \pageref on input line 66.
+LaTeX Info: Redefining \nameref on input line 66.
  (Memoria_2.2.out) (Memoria_2.2.out)
 \@outlinefile=\write4
 \openout4 = `Memoria_2.2.out'.
@@ -757,17 +850,17 @@ c
 LaTeX Info: Redefining \sptext on input line 2.
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 8.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 4.
 
 
 (C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
@@ -780,91 +873,84 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.86 \newpage
-              [1] [2] [3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 159--171
+l.92 \newpage
+              [1] [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 173--185
 
  []
 
-[6] [7]
-<img/Data_horas_insuficientes.png, id=110, 333.49594pt x 130.98938pt>
-File: img/Data_horas_insuficientes.png Graphic file (type png)
-<use img/Data_horas_insuficientes.png>
-Package pdftex.def Info: img/Data_horas_insuficientes.png  used on input line 1
-95.
-(pdftex.def)             Requested size: 333.49512pt x 130.98904pt.
-<img/Res1_horas_insuf.png, id=112, 672.26157pt x 115.18031pt>
+[4]
+(C:\Users\pbaut\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+(EntryCod/DataCopy.py)
+<img/Res1_horas_insuf.png, id=97, 672.26157pt x 115.18031pt>
 File: img/Res1_horas_insuf.png Graphic file (type png)
 <use img/Res1_horas_insuf.png>
-Package pdftex.def Info: img/Res1_horas_insuf.png  used on input line 202.
+Package pdftex.def Info: img/Res1_horas_insuf.png  used on input line 215.
 (pdftex.def)             Requested size: 470.57988pt x 80.62564pt.
 
-Overfull \hbox (110.57988pt too wide) in paragraph at lines 202--203
+Overfull \hbox (43.78853pt too wide) in paragraph at lines 215--216
 [][] 
  []
 
-[8 <./img/Data_horas_insuficientes.png> <./img/Res1_horas_insuf.png>]
-<img/Res2_horas_insuf.png, id=120, 760.34062pt x 194.22563pt>
+[5 <./img/Res1_horas_insuf.png>]
+<img/Res2_horas_insuf.png, id=113, 760.34062pt x 194.22563pt>
 File: img/Res2_horas_insuf.png Graphic file (type png)
 <use img/Res2_horas_insuf.png>
-Package pdftex.def Info: img/Res2_horas_insuf.png  used on input line 218.
+Package pdftex.def Info: img/Res2_horas_insuf.png  used on input line 231.
 (pdftex.def)             Requested size: 456.20789pt x 116.53627pt.
 
-Overfull \hbox (96.20789pt too wide) in paragraph at lines 218--219
+Overfull \hbox (29.41653pt too wide) in paragraph at lines 231--232
 [][] 
  []
 
-[9 <./img/Res2_horas_insuf.png>]
-<img/grafica1_horinsuf.png, id=126, 462.528pt x 346.896pt>
+<img/grafica1_horinsuf.png, id=114, 462.528pt x 346.896pt>
 File: img/grafica1_horinsuf.png Graphic file (type png)
 <use img/grafica1_horinsuf.png>
-Package pdftex.def Info: img/grafica1_horinsuf.png  used on input line 234.
+Package pdftex.def Info: img/grafica1_horinsuf.png  used on input line 247.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<img/grafica2_horinsuf.png, id=127, 462.528pt x 346.896pt>
+[6 <./img/Res2_horas_insuf.png> <./img/grafica1_horinsuf.png>]
+<img/grafica2_horinsuf.png, id=122, 462.528pt x 346.896pt>
 File: img/grafica2_horinsuf.png Graphic file (type png)
 <use img/grafica2_horinsuf.png>
-Package pdftex.def Info: img/grafica2_horinsuf.png  used on input line 245.
+Package pdftex.def Info: img/grafica2_horinsuf.png  used on input line 258.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [10 <./img/grafica1_horinsuf.png> <./img/grafica2_horinsuf.png>]
-<img/Data_horas_sufi.png, id=134, 334.24875pt x 130.98938pt>
-File: img/Data_horas_sufi.png Graphic file (type png)
-<use img/Data_horas_sufi.png>
-Package pdftex.def Info: img/Data_horas_sufi.png  used on input line 257.
-(pdftex.def)             Requested size: 334.24792pt x 130.98904pt.
-<img/Res1_horas_sufi.png, id=135, 668.4975pt x 109.91063pt>
+
+(EntryCod/Data.py) [7 <./img/grafica2_horinsuf.png>]
+<img/Res1_horas_sufi.png, id=136, 668.4975pt x 109.91063pt>
 File: img/Res1_horas_sufi.png Graphic file (type png)
 <use img/Res1_horas_sufi.png>
-Package pdftex.def Info: img/Res1_horas_sufi.png  used on input line 264.
+Package pdftex.def Info: img/Res1_horas_sufi.png  used on input line 280.
 (pdftex.def)             Requested size: 467.94505pt x 76.93689pt.
 
-Overfull \hbox (107.94505pt too wide) in paragraph at lines 264--265
+Overfull \hbox (41.1537pt too wide) in paragraph at lines 280--281
 [][] 
  []
 
-[11 <./img/Data_horas_sufi.png> <./img/Res1_horas_sufi.png>]
-<img/Res2_horas_sufi.png, id=142, 758.835pt x 191.9672pt>
+<img/Res2_horas_sufi.png, id=137, 758.835pt x 191.9672pt>
 File: img/Res2_horas_sufi.png Graphic file (type png)
 <use img/Res2_horas_sufi.png>
-Package pdftex.def Info: img/Res2_horas_sufi.png  used on input line 281.
+Package pdftex.def Info: img/Res2_horas_sufi.png  used on input line 297.
 (pdftex.def)             Requested size: 455.30452pt x 115.1812pt.
 
-Overfull \hbox (95.30452pt too wide) in paragraph at lines 281--282
+Overfull \hbox (28.51317pt too wide) in paragraph at lines 297--298
 [][] 
  []
 
-[12 <./img/Res2_horas_sufi.png>]
-<img/grafica1_horsuf.png, id=149, 462.528pt x 346.896pt>
+[8 <./img/Res1_horas_sufi.png> <./img/Res2_horas_sufi.png>]
+<img/grafica1_horsuf.png, id=144, 462.528pt x 346.896pt>
 File: img/grafica1_horsuf.png Graphic file (type png)
 <use img/grafica1_horsuf.png>
-Package pdftex.def Info: img/grafica1_horsuf.png  used on input line 293.
+Package pdftex.def Info: img/grafica1_horsuf.png  used on input line 309.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [13 <./img/grafica1_horsuf.png>]
-<img/grafica2_horsuf.png, id=155, 462.528pt x 346.896pt>
+<img/grafica2_horsuf.png, id=145, 462.528pt x 346.896pt>
 File: img/grafica2_horsuf.png Graphic file (type png)
 <use img/grafica2_horsuf.png>
-Package pdftex.def Info: img/grafica2_horsuf.png  used on input line 309.
+Package pdftex.def Info: img/grafica2_horsuf.png  used on input line 325.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [14 <./img/grafica2_horsuf.png>] [15] (Memoria_2.2.aux
+ [9 <./img/grafica1_horsuf.png> <./img/grafica2_horsuf.png>] [10] (Memoria_2.2.
+aux
 LaTeX Info: Redefining \sptext on input line 29.
 LaTeX Info: Redefining \. on input line 29.
 LaTeX Info: Redefining \% on input line 29.
@@ -876,13 +962,13 @@ Package logreq Info: Writing requests to 'Memoria_2.2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17699 strings out of 479586
- 296831 string characters out of 2863447
- 1047868 words of memory out of 3000000
- 34583 multiletter control sequences out of 15000+200000
+ 18859 strings out of 479586
+ 311826 string characters out of 2863447
+ 1074564 words of memory out of 3000000
+ 35708 multiletter control sequences out of 15000+200000
  416885 words of font info for 59 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,5n,70p,1635b,1927s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,5n,70p,1635b,1965s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/pbaut/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/cm-super/cm-sup
 er-t1.enc}<C:/Users/pbaut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmmi10.pfb><C:/Users/pbaut/AppData/Local/Programs/MiKTeX/fonts/type1/pu
@@ -896,9 +982,9 @@ baut/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:
 /Users/pbaut/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1095
 .pfb><C:/Users/pbaut/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/
 sfrm1440.pfb>
-Output written on Memoria_2.2.pdf (16 pages, 392127 bytes).
+Output written on Memoria_2.2.pdf (11 pages, 371346 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 155 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 201 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

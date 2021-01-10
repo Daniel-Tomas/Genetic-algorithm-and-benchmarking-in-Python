@@ -2,7 +2,7 @@
 \setlength{\parindent}{0pt}
 
 %%%%%%%% paquetes %%%%%%%%
-%\usepackage[lmargin=2cm,rmargin=2cm,top=1.5cm,bottom=2cm]{geometry}
+\usepackage[lmargin=3cm,rmargin=3cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish,es-tabla]{babel}
@@ -39,16 +39,22 @@
 %\fancyfoot[L]{2º Trabajo Optimización Heurística}
 %\renewcommand{\headrulewidth}{0pt}
 
+
+%%%%%%%% Espacio entre subsection en índice %%%%%%%%
+\usepackage{tocloft}
+\setlength{\cftbeforesubsecskip}{6pt}
+\setlength{\cftbeforesubsubsecskip}{3pt}
+
 %%%%%%%% formato de títulos y subtítulos %%%%%%%%
 
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{20pt}}
 \titleformat{\section}[hang]{\huge\bfseries}{\thesection\hsp\textcolor{gray75}{|}\hsp}{0pt}{\huge\bfseries}
-\titlespacing{\section}{0pt}{0pt}{15pt}
+\titlespacing{\section}{0pt}{45pt}{15pt}
 \titleformat{\subsection}[hang]{\Large\bfseries}{\thesubsection\hsp}{0pt}{\Large\bfseries}
 \titlespacing{\subsection}{0pt}{35pt}{15pt}
 \titleformat{\subsubsection}[hang]{\large\bfseries}{\thesubsubsection\hspace{10pt}}{0pt}{\large\bfseries} 
-\titlespacing{\subsubsection}{0pt}{20pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{20pt}{10pt}
 
 %\titleformat{\section}[block]{\LARGE\bfseries}{\thesection.}{1mm}{}
 %\titlespacing{\section}{0pc}{5.5ex}{1pc}
@@ -88,7 +94,6 @@
 \section{Introducción}
 Durante la realización de esta práctica se ha planteado un problema de optimización para su posterior resolución. Se explicará en detalle el problema así como las operaciones realizadas para obtener la solución óptima con el algoritmo. Posteriormente se resolverá el problema con diferentes datos de entrada para así poder ver los distintos resultados obtenidos.
 
-\newpage
 
 \section{Descripción}
 El problema planteado consiste en la optimización de la nota media obtenida en un conjunto de asignaturas por un alumno. Para que el caso sea lo más real posible, se han añadido distintas variables que afectan al resultado óptimo del problema, como por ejemplo, las horas de las que dispone el alumno para estudiar o la dificultad que tiene cada unas de las asignaturas.
@@ -98,31 +103,36 @@ Las distintas variables usadas en el problema son:
 
 \vspace{5mm}
 
-\textbf{minimun\_marks (array)}: Esta variable representa la nota mínima que se puede sacar en cada asignatura. En caso de no sacar la nota mínima en una asignatura, no se podrá pasar con éxito el curso.
+\begin{itemize}
+\renewcommand{\labelitemi}{$\circ$}
+
+\item \textbf{minimun\_marks (array)}: Esta variable representa la nota mínima que se puede sacar en cada asignatura. En caso de no sacar la nota mínima en una asignatura, no se podrá pasar con éxito el curso.
 
 \vspace{5mm}
 
-\textbf{point\_per\_hour (array)}: Cada elemento del array indica el número de horas que se deberá estudiar para sacar un punto en una asignatura. Esto también indica la dificultad de cada asignatura, cuantas más horas haya que estudiar para sacar un punto en una asignatura, mayor dificultad tendrá esta.
+\item \textbf{point\_per\_hour (array)}: Cada elemento del array indica el número de horas que se deberá estudiar para sacar un punto en una asignatura. Esto también indica la dificultad de cada asignatura, cuantas más horas haya que estudiar para sacar un punto en una asignatura, mayor dificultad tendrá esta.
 
 \vspace{5mm}
 
-\textbf{credits (array)}: Indica el valor de cada asignatura mediante un sistema de créditos. Una asignatura con más créditos tendrá más valor que una con menos créditos, de esta forma, a la hora de hacer la media, ponderará más una asignatura con más créditos.
+\item \textbf{credits (array)}: Indica el valor de cada asignatura mediante un sistema de créditos. Una asignatura con más créditos tendrá más valor que una con menos créditos, de esta forma, a la hora de hacer la media, ponderará más una asignatura con más créditos.
 
 \vspace{5mm}
 
-\textbf{revision\_probability (array)}: Mediante esta variable se indica la probabilidad que tiene una asignatura de que en la revisión se le suba nota al alumno. Dado que esta variable se combina con ''studen\_luck'' para determinar si finalmente al alumno se le subirá la nota, cuanto menor sea el número en ''studen\_luck'' más fácil será para el alumno subir nota en dicha asignatura. Los elementos del array deberán estar entre los valores 0 y 1.
+\item \textbf{revision\_probability (array)}: Mediante esta variable se indica la probabilidad que tiene una asignatura de que en la revisión se le suba nota al alumno. Dado que esta variable se combina con ''student\_luck'' para determinar si finalmente al alumno se le subirá la nota, cuanto menor sea el número en ''student\_luck'' más fácil será para el alumno subir nota en dicha asignatura. Los elementos del array deberán estar entre los valores 0 y 1.
 
 \vspace{5mm}
 
-\textbf{studen\_luck (array)}: Tal y como hemos mencionado anteriormente, esta variable se combina con la anterior para determinar si un alumno subirá nota en una asignatura o no. Si ''studen\_luck'' es menor o igual que ''revision\_probability'', el alumno subirá nota en dicha asignatura. Los elementos del array deberán estar entre los valores 0 y 1.
+\item \textbf{student\_luck (array)}: Tal y como hemos mencionado anteriormente, esta variable se combina con la anterior para determinar si un alumno subirá nota en una asignatura o no. Si ''student\_luck'' es menor o igual que ''revision\_probability'', el alumno subirá nota en dicha asignatura. Los elementos del array deberán estar entre los valores 0 y 1.
 
 \vspace{5mm}
 
-\textbf{revision\_mark (array)}: En el caso de que, según lo anterior, el alumno suba nota en una asignatura, ''revision\_mark'' indica la puntuación que subirá dicho alumno en la asignatura. Dado que las asignaturas se califican con una puntuación entre 0 y 10, un alumno nunca pondrá obtener una nota superior a 10 tras realizar la revisión. Para no variar demasiado los resultados obtenidos en las asignaturas, los valores entre los que se comprenden los elementos del array se encontrarán entre 0 y 0.5.
+\item textbf{revision\_mark (array)}: En el caso de que, según lo anterior, el alumno suba nota en una asignatura, ''revision\_mark'' indica la puntuación que subirá dicho alumno en la asignatura. Dado que las asignaturas se califican con una puntuación entre 0 y 10, un alumno nunca pondrá obtener una nota superior a 10 tras realizar la revisión. Para no variar demasiado los resultados obtenidos en las asignaturas, los valores entre los que se comprenden los elementos del array se encontrarán entre 0 y 0.5.
 
 \vspace{5mm}
 
-\textbf{study\_hours (int)}: La variable ''study\_hours'' representa el número total de horas de las que dispone un alumno para estudiar. El resultado óptimo no pondrá tener un número total de horas mayor que las horas de las que dispone el alumno.
+\item \textbf{study\_hours (int)}: La variable ''study\_hours'' representa el número total de horas de las que dispone un alumno para estudiar. El resultado óptimo no podrá tener un número total de horas mayor que las horas de las que dispone el alumno.
+
+\end{itemize}
 
 \vspace{5mm}
 
@@ -130,15 +140,20 @@ Todas las variables anteriores se encuentran dentro del fichero ''Data.py'' y pu
 
 \vspace{5mm}
 
-\textbf{population\_size (int)}: Esta variable indica el tamaño de la población, en los casos donde no se introduzca mediante la terminal, su valor predeterminado será de 50.
+\begin{itemize}
+\renewcommand{\labelitemi}{$\circ$}
+
+\item \textbf{population\_size (int)}: Esta variable indica el tamaño de la población. En los casos donde no se introduzca mediante la terminal, su valor predeterminado será de 50.
 
 \vspace{5mm}
 
-\textbf{iterations (int)}: Esta variable indica el número de iteraciones que se realizará el algoritmo, al igual que la anterior, en los casos en los que no se introduzca por la terminal tendrá un valor predeterminado, y este valor será de 500.
+\item \textbf{iterations (int)}: Esta variable indica el número de iteraciones que se realizará el algoritmo. Al igual que la anterior, en los casos en los que no se introduzca por la terminal tendrá un valor predeterminado, y este valor será de 500.
 
 \vspace{5mm}
 
-\textbf{reps (int)}: Indica el número de repeticiones que se realizará el algoritmo. Esta variable será obligatoria introducirla en los casos en los que se pida.
+\item \textbf{reps (int)}: Indica el número de repeticiones que se realizará el algoritmo. Esta variable será obligatoria introducirla en los casos en los que se pida.
+
+\end{itemize}
 
 \subsection{Bounds}
 
@@ -149,14 +164,13 @@ En el problema que estamos tratando, el rango de los valores de los posibles can
 
 De esta forma, el rango irá desde las horas que necesita un alumno para sacar la nota mínima, a las horas que necesita un alumno estudiar para sacar un 10, que es la máxima nota.
 
-\newpage
 
 \section{Función Fitness}
 Dado que nuestro problema consiste en maximizar la nota del alumno, cuanto mayor sea el ''fitness'' mejor será el resultado. A continuación mostraremos la parte del código utilizada para el ''fitness'' y posteriormente procederemos a explicarla.
 
 \vspace{5mm}
 
-\textcolor{orange}{def} \textcolor{yellow}{our\_fitness}(array):\\\hspace*{1em} res = \textcolor{blue}{0}\\
+\textcolor{orange}{def} \textcolor{purple}{our\_fitness}(array):\\\hspace*{1em} res = \textcolor{blue}{0}\\
 \hspace*{1em} \textcolor{orange}{for} i \textcolor{orange}{in} \textcolor{blue}{range}(\textcolor{blue}{len}(array)):\\
 \hspace*{2em} mark = (array[i] * point\_per\_hour[i])\\
 \hspace*{2em} \textcolor{orange}{if} student\_luck[i] <= revision\_probability[i]:\\
@@ -175,24 +189,23 @@ La función ''fitness'' se encarga de calcular la nota media obtenida por el alu
 
 \vspace{5mm}
 
-En el caso de habernos pasado de horas de estudio, es decir, que las horas de estudio que hemos empleado sea mayor que el número de horas de estudio de las que disponía el alumno ( $sum(array) > study\_hours$ ), el resultado será un valor negativo ( $ -((sum(array) - study\_hours) ** 2 / nota)$ ). De esta forma guiaremos al algoritmo al resultado más optimo sin sobrepasar las horas de estudio de las que el alumno dispone.
-        
-\newpage
+En el caso de habernos pasado de horas de estudio, es decir, que las horas de estudio que hemos empleado sea mayor que el número de horas de estudio de las que disponía el alumno ( $sum(array) > study\_hours$ ), el resultado será un valor negativo ( $ -((sum(array) - study\_hours) ** 2 / nota)$ ), se ha elevado al cuadrado la diferencia entre las horas que ha estudiado y las que el alumno tiene disponible para que influya más ese aspecto en la penalización. De esta forma guiaremos al algoritmo al resultado más optimo sin sobrepasar las horas de estudio de las que el alumno dispone.
 
 
 
 \section{Ejemplos}
-A continuación, vamos a realizar algunos ejemplos para visualizar los resultados obtenidos con el algoritmo y como se visualizan estos.
+A continuación, vamos a realizar algunos ejemplos para visualizar los resultados obtenidos con el algoritmo y cómo se visualizan éstos.
 
 \subsection{Horas insuficientes para aprobar}
-En este primer ejemplo, el número de horas de las que dispone el alumno, es inferior a las horas mínimas necesarias para sacar la nota mínima en todas las asignaturas, lo que implica que el alumno no podrá aprobar el curso. Vamos a ver como se comporta el algoritmo en esta situación.
+En este primer ejemplo, el número de horas de las que dispone el alumno, es inferior a las horas mínimas necesarias para sacar la nota mínima en todas las asignaturas, lo que implica que el alumno no podrá aprobar el curso. Vamos a ver cómo se comporta el algoritmo en esta situación.
 
 \vspace{5mm}
 
 \begin{itemize}
 \item \textbf{Variables de entrada}
 \end{itemize}
-\includegraphics[scale=1]{img/Data_horas_insuficientes.png}
+\lstinputlisting[language=Python, firstline=1, lastline=7]{EntryCod/DataCopy.py}
+%\includegraphics[scale=1]{img/Data_horas_insuficientes.png}
 
 \subsubsection{Resultados con 1 repetición}
 Los resultados obtenidos al realizar una repetición del algoritmo son los siguientes:
@@ -203,7 +216,7 @@ Los resultados obtenidos al realizar una repetición del algoritmo son los sigui
 
 \vspace{5mm}
 
-Como se puede observar en la imagen del resultado, el ''fitness'' obtenido es un número negativo. Esto sucede debido al ejemplo en el que nos encontramos, donde el número de horas de las que dispone el alumno es insuficiente para llegar a la nota mínima de todas las asignaturas.
+Como se puede observar en la imagen del resultado, el ''fitness'' obtenido es un número negativo. Esto sucede debido al ejemplo en el que nos encontramos, donde el número de horas de las que dispone el alumno es insuficiente para llegar a la nota mínima de todas las asignaturas y por tanto, tiene que sobrepasar esas horas (y ser penalizado) para alcanzar la nota mínima.
 
 \vspace{5mm}
 
@@ -219,13 +232,13 @@ Ahora realizaremos varias repeticiones del mismo ejemplo para ver gráficamente 
 
 \vspace{5mm}
 
-En la imagen, podemos observar como todos los resultados coinciden con las horas mínimas de estudio para cada asignatura, esto sucede porque el alumno no dispone de horas suficientes para alcanzar la nota mínima, por lo que no podría aprobar el curso con éxito, de ahí que todos los ''fitness'' resultados sean negativos.
+En la imagen, podemos observar cómo todos los resultados coinciden con las horas mínimas de estudio para cada asignatura. Esto sucede porque el alumno no dispone de horas suficientes para alcanzar la nota mínima, por lo que no podría aprobar el curso con éxito, de ahí que todos los ''fitness'' resultados sean negativos.
 
 \vspace{5mm}
 
 Ahora visualizaremos el resultado de los distintos ''fitness'' mediante diagramas de cajas, para así tener una imagen más visual de los resultados que se han obtenido.
 
-\newpage
+\vspace{5mm}
 
 \begin{itemize}
 \item \textbf{Mejor fitness de cada repetición}
@@ -236,7 +249,7 @@ Ahora visualizaremos el resultado de los distintos ''fitness'' mediante diagrama
 
 En el gráfico podemos ver representado el resultado de la imagen anterior, en el que el mejor fitness de cada repetición es -1.685. Dado que todos los mejores fitness de cada repetición tienen el mismo valor, en este caso no podemos apreciar el diagrama de caja, pero si podemos apreciar que el resultado obtenido en el diagrama es el correcto.
 
-\vspace{5mm}
+\newpage
 
 \begin{itemize}
 \item \textbf{Todos los fitness de cada repetición}
@@ -254,7 +267,10 @@ Este ejemplo plantea un escenario totalmente distinto al anterior. En esta ocasi
 \begin{itemize}
 \item \textbf{Variables de entrada}
 \end{itemize}
-\includegraphics[scale=1]{img/Data_horas_sufi.png}
+\lstinputlisting[language=Python, firstline=1, lastline=7]{EntryCod/Data.py}
+%\includegraphics[scale=1]{img/Data_horas_sufi.png}
+
+\newpage
 
 \subsubsection{Resultados con 1 repetición}
 Los resultados obtenidos al realizar una repetición del algoritmo son los siguientes:
@@ -269,12 +285,12 @@ En los resultados se pueden observar varias cosas, por un lado, al igual que en 
 
 \vspace{5mm}
 
-El fitness obtenido es 6.041, según el algoritmo, esta sería nuestra nota en caso de dedicar las hora obtenidas en ''Best Genome'' a cada una de las asignaturas, lo cual serían un total de 15.995 horas (aproximadamente las 16 horas de entrada).
+El fitness obtenido es 6.041, según el algoritmo. Esta sería nuestra nota en caso de dedicar las hora obtenidas en ''Best Genome'' a cada una de las asignaturas, lo cual serían un total de 15.995 horas (aproximadamente las 16 horas de entrada).
 
 
 
 \subsubsection{Resultados con varias repeticiones}
-En este apartado se realizarán 10 repeticiones del algoritmo para el mismo ejemplo. De esta forma podremos observar como se comporta el algoritmo al realizar varias repeticiones y como varían los resultados entre las distintas repeticiones.
+En este apartado se realizarán 10 repeticiones del algoritmo para el mismo ejemplo. De esta forma podremos observar cómo se comporta el algoritmo al realizar varias repeticiones y cómo varían los resultados entre las distintas repeticiones.
 
 \vspace{5mm}
 
@@ -298,9 +314,9 @@ Tal y como hemos mencionado antes, en este diagrama de cajas se puede apreciar c
 
 \vspace{5mm}
 
-Por otro lado, podemos observar como el mejor ''fitness'' de las 10 repeticiones se encuentra en el valor 6.2, lo que nos indicaría que tras realizar varias veces el algoritmo, la nota máxima que podemos alcanzar con 16 horas de estudio es 6.2 si las distribuimos de la siguiente forma: [3.    4.876 5.    2.191 0.919] ocupando cada posición del vector una asignatura.
+Por otro lado, podemos observar cómo el mejor ''fitness'' de las 10 repeticiones se encuentra en el valor 6.2, lo que nos indicaría que tras realizar varias veces el algoritmo, la nota máxima que podemos alcanzar con 16 horas de estudio es 6.2 si las distribuimos de la siguiente forma: [3.    4.876 5.    2.191 0.919] ocupando cada posición del vector una asignatura.
 
-\newpage
+\vspace{5mm}
 
 \begin{itemize}
 \item \textbf{Todos los fitness de cada repetición}
@@ -310,13 +326,11 @@ Por otro lado, podemos observar como el mejor ''fitness'' de las 10 repeticiones
 
 \vspace{5mm}
 
-En este segundo diagrama de cajas podemos observar los valores ''fitness'' que se han ido obteniendo en cada una de las repeticiones. Podemos observar como la distribución de los datos obtenidos en cada una de las repeticiones es muy similar, exceptuando algunos datos que se encuentran separados, los cuales podríamos tomar como anomalías.
+En este segundo diagrama de cajas podemos observar los valores ''fitness'' que se han ido obteniendo en cada una de las repeticiones. Podemos observar cómo la distribución de los datos obtenidos en cada una de las repeticiones es muy similar, exceptuando algunos datos que se encuentran separados, los cuales podríamos tomar como anomalías.
 
 \vspace{5mm}
 
-En este diagrama se observa mejor el funcionamiento del algoritmo que en el ejemplo anterior, ya que el alumno dispone de las horas suficientes para estudiar todas las asignaturas y alcanzar la nota mínima, el programa puede optimizar las horas para encontrar el resultado con el cual el alumno se acercará a la mejor nota, y esto se ve reflejado en la distribución de los datos obtenidos.
-
-\newpage
+En este diagrama se observa mejor el funcionamiento del algoritmo que en el ejemplo anterior. Ya que el alumno dispone de las horas suficientes para estudiar todas las asignaturas y alcanzar la nota mínima, el programa puede optimizar las horas para encontrar el resultado con el cual el alumno se acercará a la mejor nota, y esto se ve reflejado en la distribución de los datos obtenidos.
 
 \section{Conclusiones}
 Este trabajo nos ha ayudado a afianzar los conocimientos obtenidos durante la asignatura. La ocasión de plantear nosotros mismos un problema, y más en este caso donde el problema nos toca tan de cerca, nos ha ayudado a poder seguir el proceso lógico del algoritmo con más facilidad.
