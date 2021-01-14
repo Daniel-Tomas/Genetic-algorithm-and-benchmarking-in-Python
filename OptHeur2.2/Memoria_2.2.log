@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.3)  10 JAN 2021 12:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2021.1.3)  14 JAN 2021 09:56
 entering extended mode
 **./Memoria_2.2.tex
 (Memoria_2.2.tex
@@ -875,7 +875,7 @@ been already used, duplicate ignored
                    \relax 
 l.92 \newpage
               [1] [2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 173--185
+Underfull \hbox (badness 10000) in paragraph at lines 177--189
 
  []
 
@@ -887,10 +887,10 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 <img/Res1_horas_insuf.png, id=97, 672.26157pt x 115.18031pt>
 File: img/Res1_horas_insuf.png Graphic file (type png)
 <use img/Res1_horas_insuf.png>
-Package pdftex.def Info: img/Res1_horas_insuf.png  used on input line 215.
+Package pdftex.def Info: img/Res1_horas_insuf.png  used on input line 219.
 (pdftex.def)             Requested size: 470.57988pt x 80.62564pt.
 
-Overfull \hbox (43.78853pt too wide) in paragraph at lines 215--216
+Overfull \hbox (43.78853pt too wide) in paragraph at lines 219--220
 [][] 
  []
 
@@ -898,43 +898,43 @@ Overfull \hbox (43.78853pt too wide) in paragraph at lines 215--216
 <img/Res2_horas_insuf.png, id=113, 760.34062pt x 194.22563pt>
 File: img/Res2_horas_insuf.png Graphic file (type png)
 <use img/Res2_horas_insuf.png>
-Package pdftex.def Info: img/Res2_horas_insuf.png  used on input line 231.
+Package pdftex.def Info: img/Res2_horas_insuf.png  used on input line 235.
 (pdftex.def)             Requested size: 456.20789pt x 116.53627pt.
 
-Overfull \hbox (29.41653pt too wide) in paragraph at lines 231--232
+Overfull \hbox (29.41653pt too wide) in paragraph at lines 235--236
 [][] 
  []
 
 <img/grafica1_horinsuf.png, id=114, 462.528pt x 346.896pt>
 File: img/grafica1_horinsuf.png Graphic file (type png)
 <use img/grafica1_horinsuf.png>
-Package pdftex.def Info: img/grafica1_horinsuf.png  used on input line 247.
+Package pdftex.def Info: img/grafica1_horinsuf.png  used on input line 251.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 [6 <./img/Res2_horas_insuf.png> <./img/grafica1_horinsuf.png>]
 <img/grafica2_horinsuf.png, id=122, 462.528pt x 346.896pt>
 File: img/grafica2_horinsuf.png Graphic file (type png)
 <use img/grafica2_horinsuf.png>
-Package pdftex.def Info: img/grafica2_horinsuf.png  used on input line 258.
+Package pdftex.def Info: img/grafica2_horinsuf.png  used on input line 262.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 
 (EntryCod/Data.py) [7 <./img/grafica2_horinsuf.png>]
 <img/Res1_horas_sufi.png, id=136, 668.4975pt x 109.91063pt>
 File: img/Res1_horas_sufi.png Graphic file (type png)
 <use img/Res1_horas_sufi.png>
-Package pdftex.def Info: img/Res1_horas_sufi.png  used on input line 280.
+Package pdftex.def Info: img/Res1_horas_sufi.png  used on input line 284.
 (pdftex.def)             Requested size: 467.94505pt x 76.93689pt.
 
-Overfull \hbox (41.1537pt too wide) in paragraph at lines 280--281
+Overfull \hbox (41.1537pt too wide) in paragraph at lines 284--285
 [][] 
  []
 
 <img/Res2_horas_sufi.png, id=137, 758.835pt x 191.9672pt>
 File: img/Res2_horas_sufi.png Graphic file (type png)
 <use img/Res2_horas_sufi.png>
-Package pdftex.def Info: img/Res2_horas_sufi.png  used on input line 297.
+Package pdftex.def Info: img/Res2_horas_sufi.png  used on input line 301.
 (pdftex.def)             Requested size: 455.30452pt x 115.1812pt.
 
-Overfull \hbox (28.51317pt too wide) in paragraph at lines 297--298
+Overfull \hbox (28.51317pt too wide) in paragraph at lines 301--302
 [][] 
  []
 
@@ -942,12 +942,12 @@ Overfull \hbox (28.51317pt too wide) in paragraph at lines 297--298
 <img/grafica1_horsuf.png, id=144, 462.528pt x 346.896pt>
 File: img/grafica1_horsuf.png Graphic file (type png)
 <use img/grafica1_horsuf.png>
-Package pdftex.def Info: img/grafica1_horsuf.png  used on input line 309.
+Package pdftex.def Info: img/grafica1_horsuf.png  used on input line 313.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
 <img/grafica2_horsuf.png, id=145, 462.528pt x 346.896pt>
 File: img/grafica2_horsuf.png Graphic file (type png)
 <use img/grafica2_horsuf.png>
-Package pdftex.def Info: img/grafica2_horsuf.png  used on input line 325.
+Package pdftex.def Info: img/grafica2_horsuf.png  used on input line 329.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
  [9 <./img/grafica1_horsuf.png> <./img/grafica2_horsuf.png>] [10] (Memoria_2.2.
 aux
@@ -982,7 +982,7 @@ baut/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfbx2488.pfb><C:
 /Users/pbaut/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/sfrm1095
 .pfb><C:/Users/pbaut/AppData/Local/Programs/MiKTeX/fonts/type1/public/cm-super/
 sfrm1440.pfb>
-Output written on Memoria_2.2.pdf (11 pages, 371346 bytes).
+Output written on Memoria_2.2.pdf (11 pages, 371535 bytes).
 PDF statistics:
  201 PDF objects out of 1000 (max. 8388607)
  40 named destinations out of 1000 (max. 500000)
