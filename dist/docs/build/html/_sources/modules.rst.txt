@@ -1,7 +1,0 @@
-DE Algorithm
-====================
-
-.. toctree::
-   :maxdepth: 4
-
-   src
